@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int _playerSpeed = 5;
+    [SerializeField] private GameObject _laserPrefab;
+    private bool _canFireLaser = true;
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
@@ -15,6 +17,17 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        FireMainWeapons();
+    }
+
+    private void FireMainWeapons()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && _canFireLaser)
+        {
+            Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
+            _canFireLaser = false;
+            StartCoroutine(ReloadLaserTimer());
+        }
     }
 
     private void PlayerMovement()
@@ -34,5 +47,11 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(11, transform.position.y, 0);
         }
+    }
+
+    IEnumerator ReloadLaserTimer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _canFireLaser = true;
     }
 }
