@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int _playerSpeed = 5;
     [SerializeField] private GameObject _laserPrefab;
     private bool _canFireLaser = true;
+    [SerializeField] private int _playerLives = 3;
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
@@ -53,5 +54,14 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         _canFireLaser = true;
+    }
+
+    public void Damage()
+    {
+        _playerLives--;
+        if (_playerLives < 1)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
