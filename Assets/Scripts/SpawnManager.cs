@@ -5,6 +5,7 @@ public class SpawnManager : MonoBehaviour
 {
     
     [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private GameObject _enemyContainer;
     
     private void Start()
     {
@@ -16,7 +17,8 @@ public class SpawnManager : MonoBehaviour
         while (true)
         {
             Vector3 _positionToSpawn = new Vector3(Random.Range(-8f, 8f), 7, 0);
-            Instantiate(_enemyPrefab, _positionToSpawn, Quaternion.identity);
+            GameObject _newEnemy = Instantiate(_enemyPrefab, _positionToSpawn, Quaternion.identity);
+            _newEnemy.transform.parent = _enemyContainer.transform;
             yield return new WaitForSeconds(5.0f);
         }
     }
