@@ -42,8 +42,8 @@ public class Enemy : MonoBehaviour
                 player.Damage();
             }
         }
-        _enemySpeed = 0;
-        Destroy(GetComponent<Collider>());
+        //_enemySpeed = 0;
+        //Destroy(GetComponent<Collider>());
         Destroy(this.gameObject);
 
         if (other.CompareTag("Laser"))
