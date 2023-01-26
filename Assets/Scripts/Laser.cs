@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    [SerializeField] private int _laserSpeed = 6;
+    [SerializeField] private int _laserSpeed = 20;
 
 
     void Update()
@@ -17,7 +17,11 @@ public class Laser : MonoBehaviour
         transform.Translate(Vector3.up * _laserSpeed * Time.deltaTime);
         if (transform.position.y > 7.3f)
         {
-            Destroy(gameObject);
+            if (transform.parent != null)
+            {
+                Destroy(transform.parent.gameObject);
+            }
+            Destroy(this.gameObject);
         }
     }
 }
