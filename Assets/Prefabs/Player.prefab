@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpeed: 5
-  _laserPrefab: {fileID: 3948911961177749386, guid: 807ef4022452d48d6b10e11b497cb61e, type: 3}
+  _laserPrefab: {fileID: 5927940942536216968, guid: 72730adb3f4d7458fb5d5632b00857df, type: 3}
+  _tripleShotPrefab: {fileID: 499619913446950234, guid: 47ada9b6029d244fb8155b37e2118f4e, type: 3}
   _playerLives: 3
+  _tripleShotActive: 0
 --- !u!61 &2001911798
 BoxCollider2D:
   m_ObjectHideFlags: 0
