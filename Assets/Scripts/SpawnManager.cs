@@ -30,7 +30,6 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnPowerUpRoutine()
     {
-        //every 3-7 seconds spawn powerup
         yield return new WaitForSeconds(3.0f);
         while (_stopSpawning == false)
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int _playerSpeed = 5;
+    [SerializeField] private bool _speedBoostActive;
     [SerializeField] private GameObject _laserPrefab;
     [SerializeField] private GameObject _tripleShotPrefab;
     private bool _canFireLaser = true;
@@ -101,5 +102,22 @@ public class Player : MonoBehaviour
             _tripleShotActive = false; 
         }
         
+    }
+
+    public void SpeedBoostActive()
+    {
+        _speedBoostActive = true;
+        _playerSpeed = 15;
+        StartCoroutine(SpeedBoostPowerDownRoutine());
+    }
+
+    IEnumerator SpeedBoostPowerDownRoutine()
+    {
+        while (_speedBoostActive == true)
+        {
+            yield return new WaitForSeconds(6.0f);
+            _speedBoostActive = false;
+            _playerSpeed = 5;
+        }
     }
 }
