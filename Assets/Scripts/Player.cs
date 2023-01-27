@@ -14,21 +14,25 @@ public class Player : MonoBehaviour
     [SerializeField] private bool _tripleShotActive;
     [SerializeField] bool _shieldActive = false;
     [SerializeField] private GameObject _playerShieldPrefab;
+    [SerializeField] private int _score;
 
-    public bool CanFireLaser
-    {
-        get => _canFireLaser;
-        set => _canFireLaser = value;
-    }
+    private UIManager _uiManager;
+    
 
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
 
         if (_spawnManager == null)
         {
             Debug.Log("The Spawn manager is NULL!");
+        }
+
+        if (_uiManager == null)
+        {
+            Debug.Log("The UI Manager is NULL!");
         }
 
     }
@@ -96,6 +100,7 @@ public class Player : MonoBehaviour
             return;
         }
         _playerLives--;
+        _uiManager.UpdateLives(_playerLives);
         if (_playerLives < 1)
         {
             _spawnManager.OnPlayerDeath();
@@ -140,5 +145,11 @@ public class Player : MonoBehaviour
     {
         _shieldActive = true;
         _playerShieldPrefab.SetActive(true);
+    }
+
+    public void ScoreCalculator(int points)
+    {
+        _score += points;
+        _uiManager.UpdateScore(_score);
     }
 }
