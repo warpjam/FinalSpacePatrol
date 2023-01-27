@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
     public void SpeedBoostActive()
     {
         _speedBoostActive = true;
-        _playerSpeed = 15;
+        _playerSpeed = 10;
         StartCoroutine(SpeedBoostPowerDownRoutine());
     }
 
