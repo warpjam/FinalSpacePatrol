@@ -4,12 +4,20 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _enemySpeed = 4;
     private Player _player;
+    private Animator _enemyExplosion;
+    
     void Start()
     {
         _player = GameObject.Find("Player").GetComponent<Player>();
+        _enemyExplosion = GetComponent<Animator>();
         if (_player == null)
         {
             Debug.Log("The player is Null!");
+        }
+
+        if (_enemyExplosion == null)
+        {
+            Debug.Log("The Enemy Explosion is Null!");
         }
 
     }
@@ -38,15 +46,24 @@ public class Enemy : MonoBehaviour
                 player.Damage();
             }
         }
-        //_enemySpeed = 0;
-        //Destroy(GetComponent<Collider>());
-        Destroy(this.gameObject);
+        _enemyExplosion.SetTrigger("OnEnemyDeath");
+        _enemySpeed = 0;
+        Destroy(GetComponent<Collider2D>());
+        Destroy(this.gameObject, 2.0f);
 
         if (other.CompareTag("Laser"))
         {
-            _player.ScoreCalculator(10); 
             Destroy(other.gameObject);
-            Destroy(this.gameObject);
+
+            if (_player != null)
+            {
+                _player.ScoreCalculator(10);
+            }
+            _enemyExplosion.SetTrigger("OnEnemyDeath");
+            _enemySpeed = 0;
+            Destroy(GetComponent<Collider2D>());
+            Destroy(this.gameObject,2.0f);
+            
         }
     }
 }
