@@ -14,7 +14,11 @@ public class Player : MonoBehaviour
     [SerializeField] private bool _tripleShotActive;
     [SerializeField] bool _shieldActive = false;
     [SerializeField] private GameObject _playerShieldPrefab;
+    [SerializeField] private GameObject _playerThrustersPrefab;
+    [SerializeField] private GameObject _damageLeft; 
+    [SerializeField] private GameObject _damageRight;
     [SerializeField] private int _score;
+    
 
     private UIManager _uiManager;
     
@@ -75,6 +79,15 @@ public class Player : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5.0f, 5.0f), 0);
 
+        if (horizontalInput != 0 || verticalInput != 0)
+        {
+            _playerThrustersPrefab.SetActive(true);
+        }
+        else
+        {
+            _playerThrustersPrefab.SetActive(false);
+        }
+
         if (transform.position.x > 11f)
         {
             transform.position = new Vector3(-11, transform.position.y, 0);
@@ -101,6 +114,15 @@ public class Player : MonoBehaviour
         }
         _playerLives--;
         _uiManager.UpdateLives(_playerLives);
+
+        if (_playerLives == 2)
+        {
+            _damageLeft.SetActive(true);
+        }
+        else if (_playerLives == 1)
+        {
+            _damageRight.SetActive(true);
+        }
         if (_playerLives < 1)
         {
             _spawnManager.OnPlayerDeath();

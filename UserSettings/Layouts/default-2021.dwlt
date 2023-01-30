@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1915
     height: 1206
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Hierarchy
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 931
     width: 439
     height: 225
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
-  controlID: 25
+  controlID: 19
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 26
+  controlID: 149
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,9 +190,9 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1042.5
-    height: 669
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+    height: 618
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -209,23 +209,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: AnimationWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 669
+    y: 618
     width: 1042.5
-    height: 487
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 16}
+    height: 538
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 16}
   - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 300}
   m_MaxSize: {x: 8096, y: 24288}
   vertical: 1
-  controlID: 93
+  controlID: 20
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 439
     height: 480
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -323,8 +323,8 @@ MonoBehaviour:
     y: 0
     width: 433.5
     height: 1156
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -364,12 +364,12 @@ MonoBehaviour:
   notificationClearTime: -1
   timeSinceLastRotation: -1
   currentBranchAndRemoteHasUpdate: 0
-  currentTrackingStatusHasUpdate: 1
+  currentTrackingStatusHasUpdate: 0
   currentStatusEntriesHasUpdate: 1
   repositoryProgressHasUpdate: 1
   appManagerProgressHasUpdate: 1
-  changeTab: 2
-  activeTab: 2
+  changeTab: 3
+  activeTab: 3
   initProjectView:
     hasCompletedInitialCheck: 0
     isUserDataPresent: 0
@@ -516,10 +516,10 @@ MonoBehaviour:
     disableDelete: 1
     disableCreate: 1
     lastLocalAndRemoteBranchListChangedEvent:
-      updatedTimeString: 2023-01-26T18:35:17.510-05:00
+      updatedTimeString: 2023-01-29T14:33:35.738-05:00
       cacheType: 2
     lastCurrentBranchAndRemoteChange:
-      updatedTimeString: 2023-01-26T18:35:17.514-05:00
+      updatedTimeString: 2023-01-29T14:33:35.715-05:00
       cacheType: 1
     currentBranch:
       name: main
@@ -540,19 +540,114 @@ MonoBehaviour:
       tracking: '[None]'
   changesView:
     currentBranchHasUpdate: 0
-    currentStatusEntriesHasUpdate: 0
-    currentLocksHasUpdate: 0
+    currentStatusEntriesHasUpdate: 1
+    currentLocksHasUpdate: 1
     commitBody: 
     commitMessage: 
     currentBranch: main
     treeScroll: {x: 0, y: 0}
     treeChanges:
       assets:
-        keys: []
-        values: []
+        keys:
+        - 00000000000000001000000000000000
+        - 48aad0deb9373480b87b6931bcd9c797
+        - 6bc06fd1ec78d4fa783797958847d686
+        values:
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets/Scripts
+          label: Scripts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets/Scripts/NewBehaviourScript.cs
+          label: NewBehaviourScript.cs
+          level: 2
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets/Scripts/NewBehaviourScript.cs
+            fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs
+            projectPath: Assets/Scripts/NewBehaviourScript.cs
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
       folders:
-        keys: []
-        values: []
+        keys:
+        - Assets
+        - Assets/Scripts
+        values:
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets/Scripts
+          label: Scripts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
       checkedFileNodes:
         keys: []
         values: []
@@ -581,6 +676,78 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
+      - path: Assets
+        label: Assets
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets/Scripts
+        label: Scripts
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets/Scripts/NewBehaviourScript.cs
+        label: NewBehaviourScript.cs
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Scripts/NewBehaviourScript.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs
+          projectPath: Assets/Scripts/NewBehaviourScript.cs
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets/Scripts/NewBehaviourScript.cs.meta
+        label: NewBehaviourScript.cs.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Scripts/NewBehaviourScript.cs.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs.meta
+          projectPath: Assets/Scripts/NewBehaviourScript.cs.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
       selectedNode:
         path: 
         label: 
@@ -600,21 +767,207 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-    gitStatusEntries: []
-    changedFilesText: No changed files
+    gitStatusEntries:
+    - path: Assets/Scripts/NewBehaviourScript.cs
+      fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs
+      projectPath: Assets/Scripts/NewBehaviourScript.cs
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets/Scripts/NewBehaviourScript.cs.meta
+      fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs.meta
+      projectPath: Assets/Scripts/NewBehaviourScript.cs.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    changedFilesText: 2 changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2023-01-27T16:22:26.108-05:00
+      updatedTimeString: 2023-01-29T14:33:35.715-05:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2023-01-27T16:22:17.340-05:00
+      updatedTimeString: 2023-01-30T10:58:28.715-05:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 2023-01-27T16:21:09.901-05:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 7
   historyView:
-    currentLogHasUpdate: 1
-    currentTrackingStatusHasUpdate: 1
+    currentLogHasUpdate: 0
+    currentTrackingStatusHasUpdate: 0
     logEntries:
+    - commitID: b59852ba26d979d22cd61421b6adb5e95a7eae93
+      mergeA: 
+      mergeB: 
+      authorName: James Woods
+      authorEmail: warpjam@gmail.com
+      commitEmail: warpjam@gmail.com
+      commitName: James Woods
+      summary: Enemy Explosion Animation
+      description: 
+      timeString: 2023-01-29T14:33:27.000-05:00
+      commitTimeString: 2023-01-29T14:33:27.000-05:00
+      changes:
+      - path: Assets/Animations/Enemy.controller
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Enemy.controller
+        projectPath: Assets/Animations/Enemy.controller
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Enemy.controller.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Enemy.controller.meta
+        projectPath: Assets/Animations/Enemy.controller.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Enemy_Destroyed_anim.anim
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Enemy_Destroyed_anim.anim
+        projectPath: Assets/Animations/Enemy_Destroyed_anim.anim
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Enemy_Destroyed_anim.anim.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Enemy_Destroyed_anim.anim.meta
+        projectPath: Assets/Animations/Enemy_Destroyed_anim.anim.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Images.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images.meta
+        projectPath: Assets/Images.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Images/bootjet_logo_white.png
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images/bootjet_logo_white.png
+        projectPath: Assets/Images/bootjet_logo_white.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Images/bootjet_logo_white.png.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images/bootjet_logo_white.png.meta
+        projectPath: Assets/Images/bootjet_logo_white.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Images/gamedevjon-logo-large.png.png
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images/gamedevjon-logo-large.png.png
+        projectPath: Assets/Images/gamedevjon-logo-large.png.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Images/gamedevjon-logo-large.png.png.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images/gamedevjon-logo-large.png.png.meta
+        projectPath: Assets/Images/gamedevjon-logo-large.png.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Prefabs/Enemy/Enemy.prefab
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Enemy/Enemy.prefab
+        projectPath: Assets/Prefabs/Enemy/Enemy.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scenes/Game.unity
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Game.unity
+        projectPath: Assets/Scenes/Game.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scenes/Main_Menu.unity
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Main_Menu.unity
+        projectPath: Assets/Scenes/Main_Menu.unity
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scenes/Main_Menu.unity.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Main_Menu.unity.meta
+        projectPath: Assets/Scenes/Main_Menu.unity.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scripts/Enemy.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Enemy.cs
+        projectPath: Assets/Scripts/Enemy.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scripts/GameManager.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/GameManager.cs
+        projectPath: Assets/Scripts/GameManager.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scripts/Main_Menu.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Main_Menu.meta
+        projectPath: Assets/Scripts/Main_Menu.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scripts/Main_Menu/MainMenu.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Main_Menu/MainMenu.cs
+        projectPath: Assets/Scripts/Main_Menu/MainMenu.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scripts/Main_Menu/MainMenu.cs.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Main_Menu/MainMenu.cs.meta
+        projectPath: Assets/Scripts/Main_Menu/MainMenu.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: ProjectSettings/EditorBuildSettings.asset
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/ProjectSettings/EditorBuildSettings.asset
+        projectPath: ProjectSettings/EditorBuildSettings.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: UserSettings/EditorUserSettings.asset
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/UserSettings/EditorUserSettings.asset
+        projectPath: UserSettings/EditorUserSettings.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: UserSettings/Layouts/default-2021.dwlt
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/UserSettings/Layouts/default-2021.dwlt
+        projectPath: UserSettings/Layouts/default-2021.dwlt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+    - commitID: 2a81a7f0f3d4ce0bd3b99d17e4b48824d4ddcefa
+      mergeA: 
+      mergeB: 
+      authorName: James Woods
+      authorEmail: warpjam@gmail.com
+      commitEmail: warpjam@gmail.com
+      commitName: James Woods
+      summary: UI Gameover, flicker and r for restart
+      description: 
+      timeString: 2023-01-29T09:41:12.000-05:00
+      commitTimeString: 2023-01-29T09:41:12.000-05:00
+      changes:
+      - path: Assets/Scenes/Game.unity
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Game.unity
+        projectPath: Assets/Scenes/Game.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scripts/GameManager.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/GameManager.cs
+        projectPath: Assets/Scripts/GameManager.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scripts/GameManager.cs.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/GameManager.cs.meta
+        projectPath: Assets/Scripts/GameManager.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scripts/UIManager.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/UIManager.cs
+        projectPath: Assets/Scripts/UIManager.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
     - commitID: 07308a64e436d042f9e7af7d4bdb3c72d686ad0d
       mergeA: 
       mergeB: 
@@ -10399,14 +10752,188 @@ MonoBehaviour:
         workTreeStatus: 0
     statusAhead: 0
     lastLogChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2023-01-29T14:42:54.413-05:00
       cacheType: 3
     lastTrackingStatusChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2023-01-29T14:42:54.412-05:00
       cacheType: 5
     historyControl:
       scroll: {x: 0, y: 0}
       entries:
+      - commitID: b59852ba26d979d22cd61421b6adb5e95a7eae93
+        mergeA: 
+        mergeB: 
+        authorName: James Woods
+        authorEmail: warpjam@gmail.com
+        commitEmail: warpjam@gmail.com
+        commitName: James Woods
+        summary: Enemy Explosion Animation
+        description: 
+        timeString: 2023-01-29T14:33:27.000-05:00
+        commitTimeString: 2023-01-29T14:33:27.000-05:00
+        changes:
+        - path: Assets/Animations/Enemy.controller
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Enemy.controller
+          projectPath: Assets/Animations/Enemy.controller
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Enemy.controller.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Enemy.controller.meta
+          projectPath: Assets/Animations/Enemy.controller.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Enemy_Destroyed_anim.anim
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Enemy_Destroyed_anim.anim
+          projectPath: Assets/Animations/Enemy_Destroyed_anim.anim
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Enemy_Destroyed_anim.anim.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Enemy_Destroyed_anim.anim.meta
+          projectPath: Assets/Animations/Enemy_Destroyed_anim.anim.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Images.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images.meta
+          projectPath: Assets/Images.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Images/bootjet_logo_white.png
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images/bootjet_logo_white.png
+          projectPath: Assets/Images/bootjet_logo_white.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Images/bootjet_logo_white.png.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images/bootjet_logo_white.png.meta
+          projectPath: Assets/Images/bootjet_logo_white.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Images/gamedevjon-logo-large.png.png
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images/gamedevjon-logo-large.png.png
+          projectPath: Assets/Images/gamedevjon-logo-large.png.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Images/gamedevjon-logo-large.png.png.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Images/gamedevjon-logo-large.png.png.meta
+          projectPath: Assets/Images/gamedevjon-logo-large.png.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Prefabs/Enemy/Enemy.prefab
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Enemy/Enemy.prefab
+          projectPath: Assets/Prefabs/Enemy/Enemy.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets/Scenes/Game.unity
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Game.unity
+          projectPath: Assets/Scenes/Game.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets/Scenes/Main_Menu.unity
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Main_Menu.unity
+          projectPath: Assets/Scenes/Main_Menu.unity
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scenes/Main_Menu.unity.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Main_Menu.unity.meta
+          projectPath: Assets/Scenes/Main_Menu.unity.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scripts/Enemy.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Enemy.cs
+          projectPath: Assets/Scripts/Enemy.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets/Scripts/GameManager.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/GameManager.cs
+          projectPath: Assets/Scripts/GameManager.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets/Scripts/Main_Menu.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Main_Menu.meta
+          projectPath: Assets/Scripts/Main_Menu.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scripts/Main_Menu/MainMenu.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Main_Menu/MainMenu.cs
+          projectPath: Assets/Scripts/Main_Menu/MainMenu.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scripts/Main_Menu/MainMenu.cs.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Main_Menu/MainMenu.cs.meta
+          projectPath: Assets/Scripts/Main_Menu/MainMenu.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: ProjectSettings/EditorBuildSettings.asset
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/ProjectSettings/EditorBuildSettings.asset
+          projectPath: ProjectSettings/EditorBuildSettings.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: UserSettings/EditorUserSettings.asset
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/UserSettings/EditorUserSettings.asset
+          projectPath: UserSettings/EditorUserSettings.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: UserSettings/Layouts/default-2021.dwlt
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/UserSettings/Layouts/default-2021.dwlt
+          projectPath: UserSettings/Layouts/default-2021.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - commitID: 2a81a7f0f3d4ce0bd3b99d17e4b48824d4ddcefa
+        mergeA: 
+        mergeB: 
+        authorName: James Woods
+        authorEmail: warpjam@gmail.com
+        commitEmail: warpjam@gmail.com
+        commitName: James Woods
+        summary: UI Gameover, flicker and r for restart
+        description: 
+        timeString: 2023-01-29T09:41:12.000-05:00
+        commitTimeString: 2023-01-29T09:41:12.000-05:00
+        changes:
+        - path: Assets/Scenes/Game.unity
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Game.unity
+          projectPath: Assets/Scenes/Game.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets/Scripts/GameManager.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/GameManager.cs
+          projectPath: Assets/Scripts/GameManager.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scripts/GameManager.cs.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/GameManager.cs.meta
+          projectPath: Assets/Scripts/GameManager.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scripts/UIManager.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/UIManager.cs
+          projectPath: Assets/Scripts/UIManager.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
       - commitID: 07308a64e436d042f9e7af7d4bdb3c72d686ad0d
         mergeA: 
         mergeB: 
@@ -20210,83 +20737,107 @@ MonoBehaviour:
           indexStatus: 4
           workTreeStatus: 0
       statusAhead: 0
-      selectedIndex: 6
+      selectedIndex: 3
     selectedEntry:
-      commitID: c4e19793d6b52241157c040b189a26b62e67e843
+      commitID: ac79f2cdd231a3f202b9f4b811f283ff0ec72c45
       mergeA: 
       mergeB: 
-      authorName: warpjam
+      authorName: James Woods
       authorEmail: warpjam@gmail.com
       commitEmail: warpjam@gmail.com
-      commitName: warpjam
-      summary: powerup animation and spawning
+      commitName: James Woods
+      summary: player shield functionality
       description: 
-      timeString: 2023-01-26T16:16:24.000-05:00
-      commitTimeString: 2023-01-26T16:16:24.000-05:00
+      timeString: 2023-01-27T13:37:20.000-05:00
+      commitTimeString: 2023-01-27T13:37:20.000-05:00
       changes:
-      - path: Assets/Animations.meta
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations.meta
-        projectPath: Assets/Animations.meta
+      - path: Assets/Animations/ShieldPowerUp.controller
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/ShieldPowerUp.controller
+        projectPath: Assets/Animations/ShieldPowerUp.controller
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
-      - path: Assets/Animations/TripleShotPowerUp.controller
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/TripleShotPowerUp.controller
-        projectPath: Assets/Animations/TripleShotPowerUp.controller
+      - path: Assets/Animations/ShieldPowerUp.controller.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/ShieldPowerUp.controller.meta
+        projectPath: Assets/Animations/ShieldPowerUp.controller.meta
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
-      - path: Assets/Animations/TripleShotPowerUp.controller.meta
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/TripleShotPowerUp.controller.meta
-        projectPath: Assets/Animations/TripleShotPowerUp.controller.meta
+      - path: Assets/Animations/ShieldPowerUp_anim.anim
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/ShieldPowerUp_anim.anim
+        projectPath: Assets/Animations/ShieldPowerUp_anim.anim
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
-      - path: Assets/Animations/Triple_Shot_PowerUp_anim.anim
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Triple_Shot_PowerUp_anim.anim
-        projectPath: Assets/Animations/Triple_Shot_PowerUp_anim.anim
+      - path: Assets/Animations/ShieldPowerUp_anim.anim.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/ShieldPowerUp_anim.anim.meta
+        projectPath: Assets/Animations/ShieldPowerUp_anim.anim.meta
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
-      - path: Assets/Animations/Triple_Shot_PowerUp_anim.anim.meta
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Triple_Shot_PowerUp_anim.anim.meta
-        projectPath: Assets/Animations/Triple_Shot_PowerUp_anim.anim.meta
+      - path: Assets/Animations/Shields.controller
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Shields.controller
+        projectPath: Assets/Animations/Shields.controller
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
-      - path: Assets/Prefabs/Laser.prefab
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Laser.prefab
-        projectPath: Assets/Prefabs/Laser.prefab
+      - path: Assets/Animations/Shields.controller.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Shields.controller.meta
+        projectPath: Assets/Animations/Shields.controller.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/playerShield_anim.anim
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/playerShield_anim.anim
+        projectPath: Assets/Animations/playerShield_anim.anim
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/playerShield_anim.anim.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/playerShield_anim.anim.meta
+        projectPath: Assets/Animations/playerShield_anim.anim.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Prefabs/Player.prefab
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Player.prefab
+        projectPath: Assets/Prefabs/Player.prefab
         originalPath: 
         indexStatus: 3
         workTreeStatus: 0
-      - path: Assets/Scripts/Laser.cs
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Laser.cs
-        projectPath: Assets/Scripts/Laser.cs
+      - path: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/PowerUps/ShieldPowerUp.prefab
+        projectPath: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/PowerUps/ShieldPowerUp.prefab.meta
+        projectPath: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scenes/Game.unity
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Game.unity
+        projectPath: Assets/Scenes/Game.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scripts/Player.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Player.cs
+        projectPath: Assets/Scripts/Player.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scripts/PowerUp.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/PowerUp.cs
+        projectPath: Assets/Scripts/PowerUp.cs
         originalPath: 
         indexStatus: 3
         workTreeStatus: 0
       - path: Assets/Scripts/SpawnManager.cs
         fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/SpawnManager.cs
         projectPath: Assets/Scripts/SpawnManager.cs
-        originalPath: 
-        indexStatus: 3
-        workTreeStatus: 0
-      - path: Packages/manifest.json
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Packages/manifest.json
-        projectPath: Packages/manifest.json
-        originalPath: 
-        indexStatus: 3
-        workTreeStatus: 0
-      - path: Packages/packages-lock.json
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Packages/packages-lock.json
-        projectPath: Packages/packages-lock.json
-        originalPath: 
-        indexStatus: 3
-        workTreeStatus: 0
-      - path: ProjectSettings/PackageManagerSettings.asset
-        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/ProjectSettings/PackageManagerSettings.asset
-        projectPath: ProjectSettings/PackageManagerSettings.asset
         originalPath: 
         indexStatus: 3
         workTreeStatus: 0
@@ -20299,9 +20850,9 @@ MonoBehaviour:
         - Assets
         - Assets/Animations
         - Assets/Prefabs
+        - Assets/Prefabs/PowerUps
+        - Assets/Scenes
         - Assets/Scripts
-        - Packages
-        - ProjectSettings
         values:
         - path: Assets
           label: Assets
@@ -20357,8 +20908,26 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Assets/Scripts
-          label: Scripts
+        - path: Assets/Prefabs/PowerUps
+          label: PowerUps
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets/Scenes
+          label: Scenes
           level: 1
           isFolder: 1
           isContainer: 0
@@ -20375,27 +20944,9 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Packages
-          label: Packages
-          level: 0
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 0
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
-        - path: ProjectSettings
-          label: ProjectSettings
-          level: 0
+        - path: Assets/Scripts
+          label: Scripts
+          level: 1
           isFolder: 1
           isContainer: 0
           isCollapsed: 0
@@ -20457,24 +21008,6 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets/Animations.meta
-        label: Animations.meta
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets/Animations.meta
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations.meta
-          projectPath: Assets/Animations.meta
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
       - path: Assets/Animations
         label: Animations
         level: 1
@@ -20493,8 +21026,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets/Animations/TripleShotPowerUp.controller
-        label: TripleShotPowerUp.controller
+      - path: Assets/Animations/ShieldPowerUp.controller
+        label: ShieldPowerUp.controller
         level: 2
         isFolder: 0
         isContainer: 1
@@ -20505,14 +21038,14 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets/Animations/TripleShotPowerUp.controller
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/TripleShotPowerUp.controller
-          projectPath: Assets/Animations/TripleShotPowerUp.controller
+          path: Assets/Animations/ShieldPowerUp.controller
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/ShieldPowerUp.controller
+          projectPath: Assets/Animations/ShieldPowerUp.controller
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
-      - path: Assets/Animations/TripleShotPowerUp.controller.meta
-        label: TripleShotPowerUp.controller.meta
+      - path: Assets/Animations/ShieldPowerUp.controller.meta
+        label: ShieldPowerUp.controller.meta
         level: 3
         isFolder: 0
         isContainer: 0
@@ -20523,14 +21056,14 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets/Animations/TripleShotPowerUp.controller.meta
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/TripleShotPowerUp.controller.meta
-          projectPath: Assets/Animations/TripleShotPowerUp.controller.meta
+          path: Assets/Animations/ShieldPowerUp.controller.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/ShieldPowerUp.controller.meta
+          projectPath: Assets/Animations/ShieldPowerUp.controller.meta
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
-      - path: Assets/Animations/Triple_Shot_PowerUp_anim.anim
-        label: Triple_Shot_PowerUp_anim.anim
+      - path: Assets/Animations/ShieldPowerUp_anim.anim
+        label: ShieldPowerUp_anim.anim
         level: 2
         isFolder: 0
         isContainer: 1
@@ -20541,14 +21074,14 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets/Animations/Triple_Shot_PowerUp_anim.anim
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Triple_Shot_PowerUp_anim.anim
-          projectPath: Assets/Animations/Triple_Shot_PowerUp_anim.anim
+          path: Assets/Animations/ShieldPowerUp_anim.anim
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/ShieldPowerUp_anim.anim
+          projectPath: Assets/Animations/ShieldPowerUp_anim.anim
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
-      - path: Assets/Animations/Triple_Shot_PowerUp_anim.anim.meta
-        label: Triple_Shot_PowerUp_anim.anim.meta
+      - path: Assets/Animations/ShieldPowerUp_anim.anim.meta
+        label: ShieldPowerUp_anim.anim.meta
         level: 3
         isFolder: 0
         isContainer: 0
@@ -20559,9 +21092,81 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets/Animations/Triple_Shot_PowerUp_anim.anim.meta
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Triple_Shot_PowerUp_anim.anim.meta
-          projectPath: Assets/Animations/Triple_Shot_PowerUp_anim.anim.meta
+          path: Assets/Animations/ShieldPowerUp_anim.anim.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/ShieldPowerUp_anim.anim.meta
+          projectPath: Assets/Animations/ShieldPowerUp_anim.anim.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets/Animations/Shields.controller
+        label: Shields.controller
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Animations/Shields.controller
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Shields.controller
+          projectPath: Assets/Animations/Shields.controller
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets/Animations/Shields.controller.meta
+        label: Shields.controller.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Animations/Shields.controller.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Shields.controller.meta
+          projectPath: Assets/Animations/Shields.controller.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets/Animations/playerShield_anim.anim
+        label: playerShield_anim.anim
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Animations/playerShield_anim.anim
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/playerShield_anim.anim
+          projectPath: Assets/Animations/playerShield_anim.anim
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets/Animations/playerShield_anim.anim.meta
+        label: playerShield_anim.anim.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Animations/playerShield_anim.anim.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/playerShield_anim.anim.meta
+          projectPath: Assets/Animations/playerShield_anim.anim.meta
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
@@ -20583,8 +21188,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets/Prefabs/Laser.prefab
-        label: Laser.prefab
+      - path: Assets/Prefabs/Player.prefab
+        label: Player.prefab
         level: 2
         isFolder: 0
         isContainer: 0
@@ -20595,9 +21200,99 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets/Prefabs/Laser.prefab
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Laser.prefab
-          projectPath: Assets/Prefabs/Laser.prefab
+          path: Assets/Prefabs/Player.prefab
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Player.prefab
+          projectPath: Assets/Prefabs/Player.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Assets/Prefabs/PowerUps
+        label: PowerUps
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab
+        label: ShieldPowerUp.prefab
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/PowerUps/ShieldPowerUp.prefab
+          projectPath: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab.meta
+        label: ShieldPowerUp.prefab.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/PowerUps/ShieldPowerUp.prefab.meta
+          projectPath: Assets/Prefabs/PowerUps/ShieldPowerUp.prefab.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets/Scenes
+        label: Scenes
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets/Scenes/Game.unity
+        label: Game.unity
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Scenes/Game.unity
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Game.unity
+          projectPath: Assets/Scenes/Game.unity
           originalPath: 
           indexStatus: 3
           workTreeStatus: 0
@@ -20619,8 +21314,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets/Scripts/Laser.cs
-        label: Laser.cs
+      - path: Assets/Scripts/Player.cs
+        label: Player.cs
         level: 2
         isFolder: 0
         isContainer: 0
@@ -20631,9 +21326,27 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets/Scripts/Laser.cs
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Laser.cs
-          projectPath: Assets/Scripts/Laser.cs
+          path: Assets/Scripts/Player.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Player.cs
+          projectPath: Assets/Scripts/Player.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Assets/Scripts/PowerUp.cs
+        label: PowerUp.cs
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets/Scripts/PowerUp.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/PowerUp.cs
+          projectPath: Assets/Scripts/PowerUp.cs
           originalPath: 
           indexStatus: 3
           workTreeStatus: 0
@@ -20652,96 +21365,6 @@ MonoBehaviour:
           path: Assets/Scripts/SpawnManager.cs
           fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/SpawnManager.cs
           projectPath: Assets/Scripts/SpawnManager.cs
-          originalPath: 
-          indexStatus: 3
-          workTreeStatus: 0
-      - path: Packages
-        label: Packages
-        level: 0
-        isFolder: 1
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 0
-      - path: Packages/manifest.json
-        label: manifest.json
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Packages/manifest.json
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Packages/manifest.json
-          projectPath: Packages/manifest.json
-          originalPath: 
-          indexStatus: 3
-          workTreeStatus: 0
-      - path: Packages/packages-lock.json
-        label: packages-lock.json
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Packages/packages-lock.json
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Packages/packages-lock.json
-          projectPath: Packages/packages-lock.json
-          originalPath: 
-          indexStatus: 3
-          workTreeStatus: 0
-      - path: ProjectSettings
-        label: ProjectSettings
-        level: 0
-        isFolder: 1
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 0
-      - path: ProjectSettings/PackageManagerSettings.asset
-        label: PackageManagerSettings.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings/PackageManagerSettings.asset
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/ProjectSettings/PackageManagerSettings.asset
-          projectPath: ProjectSettings/PackageManagerSettings.asset
           originalPath: 
           indexStatus: 3
           workTreeStatus: 0
@@ -20775,7 +21398,7 @@ MonoBehaviour:
       changingManually: 0
     hasRemote: 1
     lastCurrentRemoteChangedEvent:
-      updatedTimeString: 2023-01-26T15:49:47.740-05:00
+      updatedTimeString: 2023-01-29T14:33:35.715-05:00
       cacheType: 1
     newRepositoryRemoteUrl: https://github.com/warpjam/FinalSpacePatrol.git
     repositoryRemoteName: origin
@@ -20788,7 +21411,7 @@ MonoBehaviour:
       newGitEmail: warpjam@gmail.com
       needsSaving: 0
       lastCheckUserChangedEvent:
-        updatedTimeString: 0001-01-01T00:00:00.000+00:00
+        updatedTimeString: 2023-01-29T14:34:29.690-05:00
         cacheType: 8
     webTimeout: 100000
     gitTimeout: 5000
@@ -20817,13 +21440,13 @@ MonoBehaviour:
         gitFileStatus: 0
         lockedAt: 1 Jan 0001, 00:00
     lastCurrentRemoteChangedEvent:
-      updatedTimeString: 2023-01-26T15:49:47.740-05:00
+      updatedTimeString: 2023-01-29T14:33:35.715-05:00
       cacheType: 1
     lastLocksChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2023-01-29T14:33:05.009-05:00
       cacheType: 7
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2023-01-26T16:55:09.906-05:00
+      updatedTimeString: 2023-01-29T14:33:29.683-05:00
       cacheType: 6
     lockedFiles: []
     gitStatusEntries: []
@@ -20842,7 +21465,7 @@ MonoBehaviour:
   currentRemoteUrl: https://github.com/warpjam/FinalSpacePatrol.git
   statusAhead: 0
   statusBehind: 0
-  hasItemsToCommit: 0
+  hasItemsToCommit: 1
   isTrackingRemoteBranch: 1
   currentBranchContent:
     m_Text: main
@@ -20853,13 +21476,13 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2023-01-27T16:22:26.108-05:00
+    updatedTimeString: 2023-01-29T14:33:35.715-05:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2023-01-28T15:27:27.452-05:00
+    updatedTimeString: 2023-01-30T10:06:09.070-05:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2023-01-28T15:27:27.245-05:00
+    updatedTimeString: 2023-01-30T10:06:49.979-05:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -21790,9 +22413,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 264
-    y: 752
+    y: 701
     width: 1041.5
-    height: 466
+    height: 517
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -21803,7 +22426,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 791, y: 445}
+  m_TargetSize: {x: 882, y: 496}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -21818,17 +22441,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -197.75
-    m_HBaseRangeMax: 197.75
-    m_VBaseRangeMin: -111.25
-    m_VBaseRangeMax: 111.25
+    m_HBaseRangeMin: -220.5
+    m_HBaseRangeMax: 220.5
+    m_VBaseRangeMin: -124
+    m_VBaseRangeMax: 124
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -21840,22 +22463,22 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1041.5
-      height: 445
-    m_Scale: {x: 2.1286144, y: 2.1286144}
-    m_Translation: {x: 520.75, y: 231.21364}
+      height: 496
+    m_Scale: {x: 2, y: 2}
+    m_Translation: {x: 520.75, y: 248}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -244.64272
-      y: -108.621666
-      width: 489.28543
-      height: 209.05618
+      x: -260.375
+      y: -124
+      width: 520.75
+      height: 248
     m_MinimalGUI: 1
   m_defaultScale: 2
-  m_LastWindowPixelSize: {x: 2083, y: 932}
+  m_LastWindowPixelSize: {x: 2083, y: 1034}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -21884,7 +22507,7 @@ MonoBehaviour:
     x: 264
     y: 83
     width: 1041.5
-    height: 648
+    height: 597
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -22119,9 +22742,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 395.5, y: 150.42014, z: 0}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 395.5, y: 150.42014, z: 0}
+    m_Value: {x: -0.00000019509123, y: -0.00000025371335, z: 0.00000008514328}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -22172,9 +22795,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 3.6217675
     speed: 2
-    m_Value: 10
+    m_Value: 3.6217682
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -22192,7 +22815,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0.026687272, y: 0.0035955403, z: 0.00009590425, w: -0.9996396}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -22222,7 +22845,7 @@ MonoBehaviour:
     x: 264
     y: 83
     width: 1041.5
-    height: 613
+    height: 597
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -22230,6 +22853,7 @@ MonoBehaviour:
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: -1228820055949577972, guid: 044c402b0e854474f934c6e1051f4f45, type: 2}
+    - {fileID: 6319060135225103109, guid: bdc43e65d47c1456281fb7f425900103, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.67210525
       e01: 0
@@ -22247,10 +22871,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.7187123
+      e01: 0
+      e02: 0
+      e03: 45.849846
+      e10: 0
+      e11: 0.7187123
+      e12: 0
+      e13: 104.90799
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 044c402b0e854474f934c6e1051f4f45, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: bdc43e65d47c1456281fb7f425900103, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -1228820055949577972, guid: 044c402b0e854474f934c6e1051f4f45, type: 2}
+  - m_Target: {fileID: 6319060135225103109, guid: bdc43e65d47c1456281fb7f425900103, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -22260,7 +22900,7 @@ MonoBehaviour:
   m_MiniTool: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_CurrentEditor: 0
+  m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
 --- !u!114 &19
@@ -22312,16 +22952,16 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 264
-    y: 717
+    y: 701
     width: 1041.5
-    height: 501
+    height: 517
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -21276
+  m_LastSelectedObjectID: -50782
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -22353,9 +22993,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6c4afeff
-      m_LastClickedID: -112020
-      m_ExpandedIDs: 6c4afeffd62affff8041ffff5450ffffe4acffffdef4ffff2efbffffd8590000
+      m_SelectedIDs: 9e780000
+      m_LastClickedID: 0
+      m_ExpandedIDs: b482ffff78d0ffff6cebffff0cecffffb6f4ffff30fbffff0e5d000026670000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -22419,7 +23059,8 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/2D_Galaxy_Assets/Sprites/Explosion
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -22433,7 +23074,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: d0440000
     m_LastClickedID: 17616
-    m_ExpandedIDs: 00000000565a0000585a00005a5a00005c5a0000
+    m_ExpandedIDs: 00000000125e0000785e00007a5e00007c5e00007e5e0000805e0000825e0000845e0000865e0000885e00008a5e00008c5e00008e5e0000905e0000925e0000945e0000965e0000985e00009a5e00009c5e00009e5e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -22458,26 +23099,26 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 864}
+    scrollPos: {x: 0, y: 452.00018}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000565a0000585a00005a5a00005c5a0000825a0000f25c0000166100002061000086610000d6630000d863000086640000e8660000ee660000fe670000ee680000de7e000006800000988b0000a48b0000b68b0000
+    m_ExpandedIDs: ffffffff00000000125e0000785e00007a5e00007c5e00007e5e0000805e0000825e0000845e0000865e0000885e00008a5e00008c5e00008e5e0000905e0000925e0000945e0000985e00009a5e00009c5e00009e5e0000f05e0000a2640000ea650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GameManager
-      m_OriginalName: GameManager
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 37174
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}

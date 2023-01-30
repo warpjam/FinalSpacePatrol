@@ -8,18 +8,23 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject _enemyContainer;
     [SerializeField] private GameObject _tripleShotPowerupPrefab;
     [SerializeField] private GameObject[] _powerUps;
-    private bool _stopSpawning = true;
+    private bool _stopSpawning = false;
     
     
     private void Start()
     {
-        _stopSpawning = false;
+        
+    }
+
+    public void StartSpawning()
+    {
         StartCoroutine(EnemySpawnRoutine());
         StartCoroutine(SpawnPowerUpRoutine());
     }
 
     IEnumerator EnemySpawnRoutine()
     {
+        yield return new WaitForSeconds(2.0f);
         while (_stopSpawning == false)
         {
             Vector3 _positionToSpawn = new Vector3(Random.Range(-8f, 8f), 7, 0);
