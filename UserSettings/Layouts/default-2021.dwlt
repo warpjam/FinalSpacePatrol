@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1915
     height: 1206
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Console
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 931
     width: 439
     height: 225
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
-  controlID: 19
+  controlID: 129
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 149
+  controlID: 130
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,8 +191,8 @@ MonoBehaviour:
     y: 0
     width: 1042.5
     height: 618
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimationWindow
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -218,14 +218,14 @@ MonoBehaviour:
     y: 618
     width: 1042.5
     height: 538
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 20}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 20}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 300}
   m_MaxSize: {x: 8096, y: 24288}
   vertical: 1
-  controlID: 20
+  controlID: 139
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 439
     height: 480
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -323,8 +323,8 @@ MonoBehaviour:
     y: 0
     width: 433.5
     height: 1156
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -365,11 +365,11 @@ MonoBehaviour:
   timeSinceLastRotation: -1
   currentBranchAndRemoteHasUpdate: 0
   currentTrackingStatusHasUpdate: 0
-  currentStatusEntriesHasUpdate: 1
+  currentStatusEntriesHasUpdate: 0
   repositoryProgressHasUpdate: 1
   appManagerProgressHasUpdate: 1
-  changeTab: 3
-  activeTab: 3
+  changeTab: 2
+  activeTab: 2
   initProjectView:
     hasCompletedInitialCheck: 0
     isUserDataPresent: 0
@@ -540,114 +540,19 @@ MonoBehaviour:
       tracking: '[None]'
   changesView:
     currentBranchHasUpdate: 0
-    currentStatusEntriesHasUpdate: 1
-    currentLocksHasUpdate: 1
+    currentStatusEntriesHasUpdate: 0
+    currentLocksHasUpdate: 0
     commitBody: 
     commitMessage: 
     currentBranch: main
     treeScroll: {x: 0, y: 0}
     treeChanges:
       assets:
-        keys:
-        - 00000000000000001000000000000000
-        - 48aad0deb9373480b87b6931bcd9c797
-        - 6bc06fd1ec78d4fa783797958847d686
-        values:
-        - path: Assets
-          label: Assets
-          level: 0
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
-        - path: Assets/Scripts
-          label: Scripts
-          level: 1
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
-        - path: Assets/Scripts/NewBehaviourScript.cs
-          label: NewBehaviourScript.cs
-          level: 2
-          isFolder: 0
-          isContainer: 1
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: Assets/Scripts/NewBehaviourScript.cs
-            fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs
-            projectPath: Assets/Scripts/NewBehaviourScript.cs
-            originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
+        keys: []
+        values: []
       folders:
-        keys:
-        - Assets
-        - Assets/Scripts
-        values:
-        - path: Assets
-          label: Assets
-          level: 0
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
-        - path: Assets/Scripts
-          label: Scripts
-          level: 1
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
+        keys: []
+        values: []
       checkedFileNodes:
         keys: []
         values: []
@@ -676,78 +581,6 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets
-        label: Assets
-        level: 0
-        isFolder: 1
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 0
-      - path: Assets/Scripts
-        label: Scripts
-        level: 1
-        isFolder: 1
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 0
-      - path: Assets/Scripts/NewBehaviourScript.cs
-        label: NewBehaviourScript.cs
-        level: 2
-        isFolder: 0
-        isContainer: 1
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets/Scripts/NewBehaviourScript.cs
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs
-          projectPath: Assets/Scripts/NewBehaviourScript.cs
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets/Scripts/NewBehaviourScript.cs.meta
-        label: NewBehaviourScript.cs.meta
-        level: 3
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets/Scripts/NewBehaviourScript.cs.meta
-          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs.meta
-          projectPath: Assets/Scripts/NewBehaviourScript.cs.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
       selectedNode:
         path: 
         label: 
@@ -767,33 +600,189 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-    gitStatusEntries:
-    - path: Assets/Scripts/NewBehaviourScript.cs
-      fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs
-      projectPath: Assets/Scripts/NewBehaviourScript.cs
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets/Scripts/NewBehaviourScript.cs.meta
-      fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/NewBehaviourScript.cs.meta
-      projectPath: Assets/Scripts/NewBehaviourScript.cs.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    changedFilesText: 2 changed files
+    gitStatusEntries: []
+    changedFilesText: No changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2023-01-29T14:33:35.715-05:00
+      updatedTimeString: 2023-01-30T13:58:25.918-05:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2023-01-30T10:58:28.715-05:00
+      updatedTimeString: 2023-01-30T13:58:16.129-05:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2023-01-30T13:44:51.853-05:00
       cacheType: 7
   historyView:
-    currentLogHasUpdate: 0
-    currentTrackingStatusHasUpdate: 0
+    currentLogHasUpdate: 1
+    currentTrackingStatusHasUpdate: 1
     logEntries:
+    - commitID: dd86f4d0fcb24ce7c84327e2d378f6744b6ae38a
+      mergeA: 
+      mergeB: 
+      authorName: James Woods
+      authorEmail: warpjam@gmail.com
+      commitEmail: warpjam@gmail.com
+      commitName: James Woods
+      summary: VFX Asteroid Wave Spawning Explosion Engine Damage player thrusters
+      description: 
+      timeString: 2023-01-30T13:58:14.000-05:00
+      commitTimeString: 2023-01-30T13:58:14.000-05:00
+      changes:
+      - path: Assets/Animations/Damage_Left.controller
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Damage_Left.controller
+        projectPath: Assets/Animations/Damage_Left.controller
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Damage_Left.controller.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Damage_Left.controller.meta
+        projectPath: Assets/Animations/Damage_Left.controller.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Explosion.controller
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Explosion.controller
+        projectPath: Assets/Animations/Explosion.controller
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Explosion.controller.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Explosion.controller.meta
+        projectPath: Assets/Animations/Explosion.controller.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Explosion_anim.anim
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Explosion_anim.anim
+        projectPath: Assets/Animations/Explosion_anim.anim
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Explosion_anim.anim.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Explosion_anim.anim.meta
+        projectPath: Assets/Animations/Explosion_anim.anim.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Player_Damage_anim.anim
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Player_Damage_anim.anim
+        projectPath: Assets/Animations/Player_Damage_anim.anim
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Player_Damage_anim.anim.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Player_Damage_anim.anim.meta
+        projectPath: Assets/Animations/Player_Damage_anim.anim.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Thrusters.controller
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Thrusters.controller
+        projectPath: Assets/Animations/Thrusters.controller
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Thrusters.controller.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Thrusters.controller.meta
+        projectPath: Assets/Animations/Thrusters.controller.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Thrusters_anim.anim
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Thrusters_anim.anim
+        projectPath: Assets/Animations/Thrusters_anim.anim
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Animations/Thrusters_anim.anim.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Thrusters_anim.anim.meta
+        projectPath: Assets/Animations/Thrusters_anim.anim.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Prefabs/Asteroid.prefab
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Asteroid.prefab
+        projectPath: Assets/Prefabs/Asteroid.prefab
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Prefabs/Asteroid.prefab.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Asteroid.prefab.meta
+        projectPath: Assets/Prefabs/Asteroid.prefab.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Prefabs/Explosion.prefab
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Explosion.prefab
+        projectPath: Assets/Prefabs/Explosion.prefab
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Prefabs/Explosion.prefab.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Explosion.prefab.meta
+        projectPath: Assets/Prefabs/Explosion.prefab.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Prefabs/Player.prefab
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Player.prefab
+        projectPath: Assets/Prefabs/Player.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scenes/Game.unity
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Game.unity
+        projectPath: Assets/Scenes/Game.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scripts/Asteroid.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Asteroid.cs
+        projectPath: Assets/Scripts/Asteroid.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scripts/Asteroid.cs.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Asteroid.cs.meta
+        projectPath: Assets/Scripts/Asteroid.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scripts/Explosion.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Explosion.cs
+        projectPath: Assets/Scripts/Explosion.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scripts/Explosion.cs.meta
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Explosion.cs.meta
+        projectPath: Assets/Scripts/Explosion.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets/Scripts/Player.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Player.cs
+        projectPath: Assets/Scripts/Player.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets/Scripts/SpawnManager.cs
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/SpawnManager.cs
+        projectPath: Assets/Scripts/SpawnManager.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: ProjectSettings/ProjectSettings.asset
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/ProjectSettings/ProjectSettings.asset
+        projectPath: ProjectSettings/ProjectSettings.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: UserSettings/Layouts/default-2021.dwlt
+        fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/UserSettings/Layouts/default-2021.dwlt
+        projectPath: UserSettings/Layouts/default-2021.dwlt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
     - commitID: b59852ba26d979d22cd61421b6adb5e95a7eae93
       mergeA: 
       mergeB: 
@@ -10752,14 +10741,182 @@ MonoBehaviour:
         workTreeStatus: 0
     statusAhead: 0
     lastLogChangedEvent:
-      updatedTimeString: 2023-01-29T14:42:54.413-05:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 3
     lastTrackingStatusChangedEvent:
-      updatedTimeString: 2023-01-29T14:42:54.412-05:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 5
     historyControl:
       scroll: {x: 0, y: 0}
       entries:
+      - commitID: dd86f4d0fcb24ce7c84327e2d378f6744b6ae38a
+        mergeA: 
+        mergeB: 
+        authorName: James Woods
+        authorEmail: warpjam@gmail.com
+        commitEmail: warpjam@gmail.com
+        commitName: James Woods
+        summary: VFX Asteroid Wave Spawning Explosion Engine Damage player thrusters
+        description: 
+        timeString: 2023-01-30T13:58:14.000-05:00
+        commitTimeString: 2023-01-30T13:58:14.000-05:00
+        changes:
+        - path: Assets/Animations/Damage_Left.controller
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Damage_Left.controller
+          projectPath: Assets/Animations/Damage_Left.controller
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Damage_Left.controller.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Damage_Left.controller.meta
+          projectPath: Assets/Animations/Damage_Left.controller.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Explosion.controller
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Explosion.controller
+          projectPath: Assets/Animations/Explosion.controller
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Explosion.controller.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Explosion.controller.meta
+          projectPath: Assets/Animations/Explosion.controller.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Explosion_anim.anim
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Explosion_anim.anim
+          projectPath: Assets/Animations/Explosion_anim.anim
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Explosion_anim.anim.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Explosion_anim.anim.meta
+          projectPath: Assets/Animations/Explosion_anim.anim.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Player_Damage_anim.anim
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Player_Damage_anim.anim
+          projectPath: Assets/Animations/Player_Damage_anim.anim
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Player_Damage_anim.anim.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Player_Damage_anim.anim.meta
+          projectPath: Assets/Animations/Player_Damage_anim.anim.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Thrusters.controller
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Thrusters.controller
+          projectPath: Assets/Animations/Thrusters.controller
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Thrusters.controller.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Thrusters.controller.meta
+          projectPath: Assets/Animations/Thrusters.controller.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Thrusters_anim.anim
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Thrusters_anim.anim
+          projectPath: Assets/Animations/Thrusters_anim.anim
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Animations/Thrusters_anim.anim.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/Thrusters_anim.anim.meta
+          projectPath: Assets/Animations/Thrusters_anim.anim.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Prefabs/Asteroid.prefab
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Asteroid.prefab
+          projectPath: Assets/Prefabs/Asteroid.prefab
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Prefabs/Asteroid.prefab.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Asteroid.prefab.meta
+          projectPath: Assets/Prefabs/Asteroid.prefab.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Prefabs/Explosion.prefab
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Explosion.prefab
+          projectPath: Assets/Prefabs/Explosion.prefab
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Prefabs/Explosion.prefab.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Explosion.prefab.meta
+          projectPath: Assets/Prefabs/Explosion.prefab.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Prefabs/Player.prefab
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Prefabs/Player.prefab
+          projectPath: Assets/Prefabs/Player.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets/Scenes/Game.unity
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scenes/Game.unity
+          projectPath: Assets/Scenes/Game.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets/Scripts/Asteroid.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Asteroid.cs
+          projectPath: Assets/Scripts/Asteroid.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scripts/Asteroid.cs.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Asteroid.cs.meta
+          projectPath: Assets/Scripts/Asteroid.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scripts/Explosion.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Explosion.cs
+          projectPath: Assets/Scripts/Explosion.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scripts/Explosion.cs.meta
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Explosion.cs.meta
+          projectPath: Assets/Scripts/Explosion.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets/Scripts/Player.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/Player.cs
+          projectPath: Assets/Scripts/Player.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets/Scripts/SpawnManager.cs
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Scripts/SpawnManager.cs
+          projectPath: Assets/Scripts/SpawnManager.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: ProjectSettings/ProjectSettings.asset
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/ProjectSettings/ProjectSettings.asset
+          projectPath: ProjectSettings/ProjectSettings.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: UserSettings/Layouts/default-2021.dwlt
+          fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/UserSettings/Layouts/default-2021.dwlt
+          projectPath: UserSettings/Layouts/default-2021.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
       - commitID: b59852ba26d979d22cd61421b6adb5e95a7eae93
         mergeA: 
         mergeB: 
@@ -20737,19 +20894,19 @@ MonoBehaviour:
           indexStatus: 4
           workTreeStatus: 0
       statusAhead: 0
-      selectedIndex: 3
+      selectedIndex: -1
     selectedEntry:
-      commitID: ac79f2cdd231a3f202b9f4b811f283ff0ec72c45
+      commitID: 
       mergeA: 
       mergeB: 
-      authorName: James Woods
-      authorEmail: warpjam@gmail.com
-      commitEmail: warpjam@gmail.com
-      commitName: James Woods
-      summary: player shield functionality
+      authorName: 
+      authorEmail: 
+      commitEmail: 
+      commitName: 
+      summary: 
       description: 
-      timeString: 2023-01-27T13:37:20.000-05:00
-      commitTimeString: 2023-01-27T13:37:20.000-05:00
+      timeString: 0001-01-01T00:00:00.000+00:00
+      commitTimeString: 0001-01-01T00:00:00.000+00:00
       changes:
       - path: Assets/Animations/ShieldPowerUp.controller
         fullPath: /Users/jameswoods/Developer/Projects/Schools/GameDevHQ/FinalSpacePatrol/Assets/Animations/ShieldPowerUp.controller
@@ -21476,13 +21633,13 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2023-01-29T14:33:35.715-05:00
+    updatedTimeString: 2023-01-30T13:59:33.471-05:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2023-01-30T10:06:09.070-05:00
+    updatedTimeString: 2023-01-30T13:59:34.354-05:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2023-01-30T10:06:49.979-05:00
+    updatedTimeString: 2023-01-30T14:03:26.728-05:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -22742,9 +22899,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 7.2131743, y: 3.28209, z: -0.13376585}
     speed: 2
-    m_Value: {x: -0.00000019509123, y: -0.00000025371335, z: 0.00000008514328}
+    m_Value: {x: 7.2131743, y: 3.28209, z: -0.13376585}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -22795,9 +22952,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.6217675
+    m_Target: 15.006367
     speed: 2
-    m_Value: 3.6217682
+    m_Value: 15.006367
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -22854,6 +23011,8 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: -1228820055949577972, guid: 044c402b0e854474f934c6e1051f4f45, type: 2}
     - {fileID: 6319060135225103109, guid: bdc43e65d47c1456281fb7f425900103, type: 2}
+    - {fileID: -3971619243375635038, guid: bf3d59e8e100e4db3a95e851700067f9, type: 2}
+    - {fileID: 5498330282853220339, guid: 3a3386fac0b1442a9bdbf95c5caaac88, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.67210525
       e01: 0
@@ -22887,10 +23046,42 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: bdc43e65d47c1456281fb7f425900103, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: bf3d59e8e100e4db3a95e851700067f9, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 6319060135225103109, guid: bdc43e65d47c1456281fb7f425900103, type: 2}
+  - m_Target: {fileID: -3971619243375635038, guid: bf3d59e8e100e4db3a95e851700067f9, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -22961,7 +23152,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -50782
+  m_LastSelectedObjectID: -1280
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -22993,9 +23184,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9e780000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b482ffff78d0ffff6cebffff0cecffffb6f4ffff30fbffff0e5d000026670000
+      m_ExpandedIDs: 02fbffff5c5e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -23060,7 +23251,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/2D_Galaxy_Assets/Sprites/Explosion
+    - Assets/Prefabs/Enemy
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -23074,7 +23265,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: d0440000
     m_LastClickedID: 17616
-    m_ExpandedIDs: 00000000125e0000785e00007a5e00007c5e00007e5e0000805e0000825e0000845e0000865e0000885e00008a5e00008c5e00008e5e0000905e0000925e0000945e0000965e0000985e00009a5e00009c5e00009e5e0000
+    m_ExpandedIDs: 0000000028600000bc630000be630000c0630000c2630000c4630000c6630000c8630000ca630000cc630000ce630000d0630000d2630000d4630000d6630000d8630000da630000dc630000de630000e0630000e2630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -23099,10 +23290,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 452.00018}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000125e0000785e00007a5e00007c5e00007e5e0000805e0000825e0000845e0000865e0000885e00008a5e00008c5e00008e5e0000905e0000925e0000945e0000985e00009a5e00009c5e00009e5e0000f05e0000a2640000ea650000
+    m_ExpandedIDs: ffffffff0000000028600000bc630000be630000c0630000c2630000c4630000c6630000c8630000ca630000cc630000ce630000d0630000d2630000d4630000d6630000d8630000da630000dc630000de630000e0630000e26300000c640000b66c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
