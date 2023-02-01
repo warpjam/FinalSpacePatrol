@@ -43,7 +43,6 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.CompareTag("Player"))
         {
             Player player = other.transform.GetComponent<Player>();
@@ -52,12 +51,14 @@ public class Enemy : MonoBehaviour
             {
                 player.Damage();
             }
+
+            _enemyExplosion.SetTrigger("OnEnemyDeath");
+            _audioSource.Play();
+            _enemySpeed = 0;
+            Destroy(GetComponent<Collider2D>());
+            Debug.Log("I'm killed by the player");
+            Destroy(this.gameObject, 2.8f);
         }
-        _enemyExplosion.SetTrigger("OnEnemyDeath");
-        _audioSource.Play();
-        _enemySpeed = 0;
-        Destroy(GetComponent<Collider2D>());
-        Destroy(this.gameObject, 2.0f);
 
         if (other.CompareTag("Laser"))
         {
@@ -71,8 +72,14 @@ public class Enemy : MonoBehaviour
             _audioSource.Play();
             _enemySpeed = 0;
             Destroy(GetComponent<Collider2D>());
+            Debug.Log("I'm killed by the Laser");
             Destroy(this.gameObject,2.0f);
-            
         }
+
+        if (other.CompareTag("PowerUps"))
+        {
+            Debug.Log("Why!?");
+        }
+
     }
 }

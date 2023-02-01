@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    [SerializeField] private int _powerUpSpeed = 2;
+    [SerializeField] private float _powerUpSpeed = 2;
     [SerializeField] private int _powerUpID; //0 = TripleShot, 1 = Speed, 2 = Shield 
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _powerUpSound;
     
-
-
     void Update()
     {
         transform.Translate(Vector3.down * _powerUpSpeed * Time.deltaTime);
-        if (transform.position.y < -6.0f)
+        if (transform.position.y < -7.5f)
         {
             Destroy(this.gameObject);
         }
@@ -41,6 +41,7 @@ public class PowerUp : MonoBehaviour
                         break;
                 }
             }
+            AudioSource.PlayClipAtPoint(_powerUpSound, transform.position);
             Destroy(this.gameObject);
         }
     }
