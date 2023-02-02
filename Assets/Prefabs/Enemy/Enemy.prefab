@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3382604850397360066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12213129, y: 0.022816539, z: -0.11183357}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 4
+  _enemyLaserPrefab: {fileID: 2726960220917097216, guid: 28ad9b923d4ed4524a06d96391290257, type: 3}
 --- !u!212 &7387049906693779859
 SpriteRenderer:
   m_ObjectHideFlags: 0
