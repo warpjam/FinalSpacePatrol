@@ -88,13 +88,23 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
-        transform.Translate(direction * _playerSpeed * Time.deltaTime);
+
+        float playerSpeed = _playerSpeed;
+        float thrustersScale = 0.5f;
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            playerSpeed *= 2;
+            thrustersScale += 0.5f;
+        }
+
+        transform.Translate(direction * playerSpeed * Time.deltaTime);
 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5.0f, 5.0f), 0);
 
         if (horizontalInput != 0 || verticalInput != 0)
         {
             _playerThrustersPrefab.SetActive(true);
+            _playerThrustersPrefab.transform.localScale = new Vector3(thrustersScale, thrustersScale, thrustersScale);
         }
         else
         {
@@ -110,6 +120,7 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(11, transform.position.y, 0);
         }
     }
+
 
     IEnumerator ReloadLaserTimer()
     {
