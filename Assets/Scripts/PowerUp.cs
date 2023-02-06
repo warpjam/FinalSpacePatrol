@@ -3,7 +3,7 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     [SerializeField] private float _powerUpSpeed = 2;
-    [SerializeField] private int _powerUpID; //0 = TripleShot, 1 = Speed, 2 = Shield 
+    [SerializeField] private int _powerUpID; //0 = TripleShot, 1 = Speed, 2 = Shields, 3 = Ammo,  
     private AudioSource _audioSource;
     [SerializeField] private AudioClip _powerUpSound;
     
@@ -35,6 +35,9 @@ public class PowerUp : MonoBehaviour
                         break;
                     case 2:
                         player.ShieldsUp();
+                        break;
+                    case 3:
+                        player.AmmoDrop();
                         break;
                     default:
                         Debug.Log("Default Value");

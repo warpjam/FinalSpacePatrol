@@ -239,6 +239,11 @@ public class Player : MonoBehaviour
         _playerShieldPrefab.SetActive(true);
     }
 
+    public void AmmoDrop()
+    {
+        _ammoCount = 15;
+    }
+
     public void ScoreCalculator(int points)
     {
         _score += points;
