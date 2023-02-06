@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int _playerSpeed = 5;
+    [SerializeField] private float _playerSpeed = 5;
     [SerializeField] private bool _speedBoostActive;
     [SerializeField] private GameObject _laserPrefab;
     [SerializeField] private GameObject _tripleShotPrefab;
     private bool _canFireLaser = true;
-    [SerializeField] private int _playerLives = 3;
     private SpawnManager _spawnManager;
     [SerializeField] private bool _tripleShotActive;
-    [SerializeField] bool _shieldActive = false;
-    [SerializeField] private GameObject _playerShieldPrefab;
     [SerializeField] private GameObject _playerThrustersPrefab;
     [SerializeField] private GameObject _damageLeft; 
     [SerializeField] private GameObject _damageRight;
     [SerializeField] private int _score;
     [SerializeField] private AudioClip _basicLaserSound;
+    
+    [Header("Shields-Lives-Damage")]
+    [SerializeField] private int _playerLives = 3;
+    private SpriteRenderer _shieldHitColor;
+    [SerializeField] bool _shieldActive = false;
+    [SerializeField] private int _shieldHits;
+    [SerializeField] private GameObject _playerShieldPrefab;
 
     private UIManager _uiManager;
     private AudioSource _audioSource;
     
+
 
     void Start()
     {
@@ -93,20 +98,20 @@ public class Player : MonoBehaviour
         float thrustersScale = 0.5f;
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-            playerSpeed *= 2;
-            thrustersScale += 0.5f;
+            playerSpeed *= 1.25f;
+            thrustersScale += 0.25f;
         }
 
         transform.Translate(direction * playerSpeed * Time.deltaTime);
 
-        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5.0f, 5.0f), 0);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5.0f,5.0f), 0);
 
         if (horizontalInput != 0 || verticalInput != 0)
         {
             _playerThrustersPrefab.SetActive(true);
-            _playerThrustersPrefab.transform.localScale = new Vector3(thrustersScale, thrustersScale, thrustersScale);
+            _playerThrustersPrefab.transform.localScale = new Vector3(thrustersScale, thrustersScale,thrustersScale);
         }
-        else
+        else if (_speedBoostActive != true)
         {
             _playerThrustersPrefab.SetActive(false);
         }
@@ -132,21 +137,42 @@ public class Player : MonoBehaviour
     {
         if (_shieldActive == true)
         {
+            _shieldHits--;
+
+            switch (_shieldHits)
+            {
+                case 0:
+                    _shieldActive = false;
+                    _playerShieldPrefab.SetActive(false);
+                    return;
+                case 1:
+                    _shieldHitColor.color = Color.red;
+                    return;
+                case 2:
+                    _shieldHitColor.color = Color.green;
+                    return;
+                default:
+                    break;
+            }
+          
             _shieldActive = false;
             _playerShieldPrefab.SetActive(false);
             return;
         }
-        _playerLives--;
+        _playerLives -= 1;
         _uiManager.UpdateLives(_playerLives);
+        //_cameraShake.StartShaking();
 
         if (_playerLives == 2)
         {
             _damageLeft.SetActive(true);
         }
+        
         else if (_playerLives == 1)
         {
             _damageRight.SetActive(true);
         }
+
         if (_playerLives < 1)
         {
             _spawnManager.OnPlayerDeath();
@@ -172,8 +198,13 @@ public class Player : MonoBehaviour
 
     public void SpeedBoostActive()
     {
+        float thrustersScale = 0.5f;
         _speedBoostActive = true;
         _playerSpeed = 10;
+        thrustersScale += 0.25f;
+        _playerThrustersPrefab.SetActive(true);
+        _playerThrustersPrefab.transform.localScale = new Vector3(thrustersScale, thrustersScale,thrustersScale);
+ 
         StartCoroutine(SpeedBoostPowerDownRoutine());
     }
 
@@ -181,7 +212,9 @@ public class Player : MonoBehaviour
     {
         while (_speedBoostActive == true)
         {
+
             yield return new WaitForSeconds(6.0f);
+            
             _speedBoostActive = false;
             _playerSpeed = 5;
         }
@@ -189,6 +222,9 @@ public class Player : MonoBehaviour
 
     public void ShieldsUp()
     {
+        _shieldHitColor = _playerShieldPrefab.GetComponent<SpriteRenderer>();
+        _shieldHitColor.color = Color.cyan;
+        _shieldHits = 3;
         _shieldActive = true;
         _playerShieldPrefab.SetActive(true);
     }

@@ -51,7 +51,6 @@ public class Laser : MonoBehaviour
 
     public void AssignEnemyLaser()
     {
-        Debug.Log("I got called from the enemy");
         _isEnemyLasers = true;
     }
 

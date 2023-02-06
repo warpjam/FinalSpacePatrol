@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
             _audioSource.Play();
             _enemySpeed = 0;
             Destroy(GetComponent<Collider2D>());
-            Debug.Log("I'm killed by the player");
+            //Debug.Log("I'm killed by the player");
             Destroy(this.gameObject, 2.8f);
         }
 
@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
             _audioSource.Play();
             _enemySpeed = 0;
             Destroy(GetComponent<Collider2D>());
-            Debug.Log("I'm killed by the Laser");
+            //Debug.Log("I'm killed by the Laser");
             Destroy(this.gameObject,2.0f);
         }
  
