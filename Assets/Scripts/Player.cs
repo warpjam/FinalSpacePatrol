@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _damageRight;
     [SerializeField] private int _score;
     [SerializeField] private AudioClip _basicLaserSound;
+
+    [Header("Weapons")] 
+    [SerializeField] private int _ammoCount = 15;
+    [SerializeField] private AudioClip _emptyLaserSound;
     
     [Header("Shields-Lives-Damage")]
     [SerializeField] private int _playerLives = 3;
@@ -63,9 +67,14 @@ public class Player : MonoBehaviour
         PlayerMovement();
 
         if (Input.GetKeyDown(KeyCode.Space) && _canFireLaser)
-        {
-            FireMainWeapons();
-        }
+            if (_ammoCount == 0 && _tripleShotActive == !true)
+            {
+                AudioSource.PlayClipAtPoint(_emptyLaserSound, transform.position);
+            }
+            else 
+            {
+                FireMainWeapons();
+            }
         
     }
 
@@ -80,6 +89,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            _ammoCount--;
             Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
             _canFireLaser = false;
             StartCoroutine(ReloadLaserTimer()); 
