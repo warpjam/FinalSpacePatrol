@@ -1528,6 +1528,10 @@ PrefabInstance:
       propertyPath: _uniBeamPrefab
       value: 
       objectReference: {fileID: 1750251397}
+    - target: {fileID: 6164231265148681881, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
 --- !u!1001 &8843595126482906408

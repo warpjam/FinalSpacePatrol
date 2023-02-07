@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnPowerUpRoutine()
+    /*IEnumerator SpawnPowerUpRoutine()
     {
         yield return new WaitForSeconds(3.0f);
         while (_stopSpawning == false)
@@ -39,7 +39,26 @@ public class SpawnManager : MonoBehaviour
             Instantiate(_powerUps[_randomPowerUp], _positionToSpawn, Quaternion.identity);
             yield return new WaitForSeconds(Random.Range(3, 11));
         }
+    }*/
+    IEnumerator SpawnPowerUpRoutine()
+    {
+        yield return new WaitForSeconds(3.0f);
+        while (_stopSpawning == false)
+        {
+            Vector3 _positionToSpawn = new Vector3(Random.Range(-8f, 8f), 7, 0);
+            int _randomPowerUp = Random.Range(0, 6);
+            if (_randomPowerUp == 5 && Random.value < 0.25)
+            {
+                Instantiate(_powerUps[_randomPowerUp], _positionToSpawn, Quaternion.identity);
+            }
+            else if (_randomPowerUp != 5)
+            {
+                Instantiate(_powerUps[_randomPowerUp], _positionToSpawn, Quaternion.identity);
+            }
+            yield return new WaitForSeconds(Random.Range(3, 11));
+        }
     }
+
 
     public void OnPlayerDeath()
     {

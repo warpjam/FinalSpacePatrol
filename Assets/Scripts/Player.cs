@@ -252,13 +252,13 @@ public class Player : MonoBehaviour
         if (_playerLives == 1)
         {
             _playerLives++;
-            _damageLeft.SetActive(false);
+            _damageRight.SetActive(false);
             _uiManager.UpdateLives(_playerLives);
         }
         else if (_playerLives == 2)
         {
             _playerLives++;
-            _damageRight.SetActive(false);
+            _damageLeft.SetActive(false);
             _uiManager.UpdateLives(_playerLives);
         }
         
