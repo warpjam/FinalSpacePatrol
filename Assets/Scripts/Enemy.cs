@@ -82,9 +82,22 @@ public class Enemy : MonoBehaviour
             _audioSource.Play();
             _enemySpeed = 0;
             Destroy(GetComponent<Collider2D>());
-            //Debug.Log("I'm killed by the Laser");
             Destroy(this.gameObject,2.0f);
         }
+
+        if (other.CompareTag("UniBeam"))
+        {
+            if (_player != null)
+            {
+                _player.ScoreCalculator(10);
+            }
+            _enemyExplosion.SetTrigger("OnEnemyDeath");
+            _audioSource.Play();
+            _enemySpeed = 0;
+            Destroy(GetComponent<Collider2D>());
+            Destroy(this.gameObject,2.0f);
+        }
+        
  
     }
 

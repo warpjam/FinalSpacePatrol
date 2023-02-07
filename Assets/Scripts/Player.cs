@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     [Header("Weapons")] 
     [SerializeField] private int _ammoCount = 15;
     [SerializeField] private AudioClip _emptyLaserSound;
+    [SerializeField] private GameObject _uniBeamPrefab;
+    [SerializeField] private bool _uniBeamActive;
+    [SerializeField] private AudioClip _uniBeamSound;
     
     [Header("Shields-Lives-Damage")]
     [SerializeField] private int _playerLives = 3;
@@ -242,6 +245,44 @@ public class Player : MonoBehaviour
     public void AmmoDrop()
     {
         _ammoCount = 15;
+    }
+
+    public void HealthPowerUp()
+    {
+        if (_playerLives == 1)
+        {
+            _playerLives++;
+            _damageLeft.SetActive(false);
+            _uiManager.UpdateLives(_playerLives);
+        }
+        else if (_playerLives == 2)
+        {
+            _playerLives++;
+            _damageRight.SetActive(false);
+            _uiManager.UpdateLives(_playerLives);
+        }
+        
+    }
+
+    public void UniBeamPowerUp()
+    {
+        _uniBeamActive = true;
+        _canFireLaser = false;
+        AudioSource.PlayClipAtPoint(_uniBeamSound, transform.position);
+        _uniBeamPrefab.SetActive(true);
+        StartCoroutine(UnibeamPowerDownRoutine());
+
+    }
+
+    IEnumerator UnibeamPowerDownRoutine()
+    {
+        while (_uniBeamActive == true)
+        {
+            yield return new WaitForSeconds(5.0f);
+            _uniBeamActive = false;
+            _canFireLaser = true;
+            _uniBeamPrefab.SetActive(false);
+        }
     }
 
     public void ScoreCalculator(int points)

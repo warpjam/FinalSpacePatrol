@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Laser
   - PowerUps
+  - Shields
+  - UniBeam
   layers:
   - Default
   - TransparentFX
