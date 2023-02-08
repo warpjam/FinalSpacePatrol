@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image _livesImg;
     [SerializeField] private TMP_Text _gameOverTxt;
     [SerializeField] private TMP_Text _restartTxt;
+    [SerializeField] private Slider _thrustSlider;
     private GameManager _gameManager;
     void Start()
     {
@@ -39,6 +40,11 @@ public class UIManager : MonoBehaviour
             GameOverSequence();
         }
 
+    }
+
+    public void UpdateThrustSlider(float charge)
+    {
+        _thrustSlider.value = charge;
     }
 
     private void GameOverSequence()

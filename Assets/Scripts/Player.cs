@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     [SerializeField] private int _score;
     [SerializeField] private AudioClip _basicLaserSound;
 
+    [Header("Thrusters")] 
+    [SerializeField] private int _thrustPower = 100;
+    [SerializeField] private bool _canThrust = true;
+    
     [Header("Weapons")] 
     [SerializeField] private int _ammoCount = 15;
     [SerializeField] private AudioClip _emptyLaserSound;
@@ -33,6 +37,7 @@ public class Player : MonoBehaviour
 
     private UIManager _uiManager;
     private AudioSource _audioSource;
+    private CameraShake _cameraShake;
     
 
 
@@ -42,6 +47,7 @@ public class Player : MonoBehaviour
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         _audioSource = GetComponent<AudioSource>();
+        _cameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
 
         if (_spawnManager == null)
         {
@@ -109,10 +115,18 @@ public class Player : MonoBehaviour
 
         float playerSpeed = _playerSpeed;
         float thrustersScale = 0.5f;
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) && _speedBoostActive != true)
         {
+            _thrustPower--;
+            _uiManager.UpdateThrustSlider(_thrustPower);
             playerSpeed *= 1.25f;
             thrustersScale += 0.25f;
+            if (_thrustPower == 0)
+            {
+                _canThrust = false;
+                StartCoroutine(RechargeThrusters());
+            }
         }
 
         transform.Translate(direction * playerSpeed * Time.deltaTime);
@@ -136,6 +150,17 @@ public class Player : MonoBehaviour
         else if (transform.position.x < -11f)
         {
             transform.position = new Vector3(11, transform.position.y, 0);
+        }
+    }
+
+    IEnumerator RechargeThrusters()
+    {
+        yield return new WaitForSeconds(5f);
+        while (_thrustPower < 100 && _canThrust == false)
+        {
+            _thrustPower = 100;
+            _uiManager.UpdateThrustSlider(_thrustPower);
+            _canThrust = true;
         }
     }
 
@@ -174,7 +199,7 @@ public class Player : MonoBehaviour
         }
         _playerLives -= 1;
         _uiManager.UpdateLives(_playerLives);
-        //_cameraShake.StartShaking();
+        _cameraShake.StartShaking();
 
         if (_playerLives == 2)
         {
