@@ -10,7 +10,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject _enemyLaserPrefab;
     private float _fireRate = 3.0f;
     private float _canFire = -1f;
-    
+    [SerializeField] private int _enemyID; // 0 = Basic Enemy, 1 = S-Wave Enemy, 
+    private float sSpeed = 2f;
+    private float sRange = 1f; 
 
     void Start()
     {
@@ -42,13 +44,33 @@ public class Enemy : MonoBehaviour
 
     private void EnemyMovement()
     {
-        transform.Translate(Vector3.down * _enemySpeed * Time.deltaTime);
-
-        if (transform.position.y < -6.4f)
+        if(_enemyID == 1)
         {
-            float _randomX = Random.Range(-11, 11);
-            transform.position = new Vector3(_randomX, 6, 0);
+            float y = transform.position.y - Time.deltaTime * _enemySpeed;
+
+            // calculate the horizontal position based on time and sSpeed
+            float x = Mathf.PingPong(Time.time * sSpeed, sRange * 2) - sRange;
+
+            transform.position = new Vector3(x, y, 0f);
+
+            if (transform.position.y < -6.4f)
+            {
+                float _randomX = Random.Range(-11, 11);
+                transform.position = new Vector3(_randomX, 6, 0);
+            }
         }
+        else
+        {
+            transform.Translate(Vector3.down * _enemySpeed * Time.deltaTime);
+
+            if (transform.position.y < -6.4f)
+            {
+                float _randomX = Random.Range(-11, 11);
+                transform.position = new Vector3(_randomX, 6, 0);
+            }
+        }
+        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

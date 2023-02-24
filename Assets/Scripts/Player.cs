@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class Player : MonoBehaviour
     [Header("Thrusters")] 
     [SerializeField] private int _thrustPower = 100;
     [SerializeField] private bool _canThrust = true;
-    
+
     [Header("Weapons")] 
     [SerializeField] private int _ammoCount = 15;
     [SerializeField] private AudioClip _emptyLaserSound;
@@ -116,15 +117,19 @@ public class Player : MonoBehaviour
         float playerSpeed = _playerSpeed;
         float thrustersScale = 0.5f;
         
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) && _speedBoostActive != true)
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) && _speedBoostActive != true && _thrustPower > 0)
         {
-            _thrustPower--;
-            _uiManager.UpdateThrustSlider(_thrustPower);
-            playerSpeed *= 1.25f;
-            thrustersScale += 0.25f;
-            if (_thrustPower == 0)
+            if (_speedBoostActive != true && _thrustPower > 0)
             {
-                _canThrust = false;
+                _thrustPower--;
+                _uiManager.UpdateThrustSlider(_thrustPower); 
+                playerSpeed *= 2f;
+                thrustersScale += 0.25f;
+            }
+            
+            else if (_thrustPower == 0)
+            {
+                //_canThrust = false;
                 StartCoroutine(RechargeThrusters());
             }
         }
@@ -155,14 +160,16 @@ public class Player : MonoBehaviour
 
     IEnumerator RechargeThrusters()
     {
-        yield return new WaitForSeconds(5f);
-        while (_thrustPower < 100 && _canThrust == false)
+        _canThrust = false;
+        yield return new WaitForSeconds(6f);
+        while (_thrustPower == 0 && _canThrust == false)
         {
             _thrustPower = 100;
             _uiManager.UpdateThrustSlider(_thrustPower);
             _canThrust = true;
         }
     }
+    
 
 
     IEnumerator ReloadLaserTimer()
