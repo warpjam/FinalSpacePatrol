@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
         else
         {
             _ammoCount--;
+            _uiManager.UpdateAmmoCount(_ammoCount);
             Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
             _canFireLaser = false;
             StartCoroutine(ReloadLaserTimer()); 

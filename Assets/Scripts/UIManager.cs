@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private Sprite[] _livesSprites;
+    [SerializeField] private TMP_Text _ammoText;
     [SerializeField] private Image _livesImg;
     [SerializeField] private TMP_Text _gameOverTxt;
     [SerializeField] private TMP_Text _restartTxt;
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _scoreText.text = "Score: " + 0;
+        _ammoText.text = "Ammo: " + 15 + "/15";
         _gameOverTxt.gameObject.SetActive(false);
         _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
 
@@ -54,6 +56,11 @@ public class UIManager : MonoBehaviour
         _restartTxt.gameObject.SetActive(true);
 
         StartCoroutine(GameOverFlickerRoutine());
+    }
+
+    public void UpdateAmmoCount(int ammoCount)
+    {
+        _ammoText.text = "Ammo: " + ammoCount.ToString() + "/15";
     }
 
     IEnumerator GameOverFlickerRoutine()
