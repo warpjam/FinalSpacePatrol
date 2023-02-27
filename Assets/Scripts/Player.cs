@@ -19,8 +19,9 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip _basicLaserSound;
 
     [Header("Thrusters")] 
-    [SerializeField] private int _thrustPower = 100;
+    [SerializeField] private float _thrustPower = 100f;
     [SerializeField] private bool _canThrust = true;
+    [SerializeField] private bool _isRechargingThrusters = false;
 
     [Header("Weapons")] 
     [SerializeField] private int _ammoCount = 15;
@@ -118,23 +119,20 @@ public class Player : MonoBehaviour
         float playerSpeed = _playerSpeed;
         float thrustersScale = 0.5f;
         
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) && _speedBoostActive != true && _thrustPower > 0)
+        if (Input.GetKey(KeyCode.RightShift) && _speedBoostActive != true && _canThrust == true && _thrustPower > 0)
         {
-            if (_speedBoostActive != true && _thrustPower > 0)
-            {
-                _thrustPower--;
-                _uiManager.UpdateThrustSlider(_thrustPower); 
-                playerSpeed *= 2f;
-                thrustersScale += 0.25f;
-            }
-            
-            else if (_thrustPower == 0)
-            {
-                //_canThrust = false;
-                StartCoroutine(RechargeThrusters());
-            }
+            _thrustPower -= 0.50f;
+            _uiManager.UpdateThrustSlider(_thrustPower); 
+            playerSpeed *= 2f;
+            thrustersScale += 0.25f;
         }
-
+            
+        if (_thrustPower == 0 && _isRechargingThrusters == false)
+        {
+            _canThrust = false;
+            _isRechargingThrusters = true;
+            StartCoroutine(RechargeThrusters());
+        }
         transform.Translate(direction * playerSpeed * Time.deltaTime);
 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5.0f,5.0f), 0);
@@ -161,16 +159,13 @@ public class Player : MonoBehaviour
 
     IEnumerator RechargeThrusters()
     {
-        _canThrust = false;
         yield return new WaitForSeconds(6f);
-        while (_thrustPower == 0 && _canThrust == false)
-        {
-            _thrustPower = 100;
-            _uiManager.UpdateThrustSlider(_thrustPower);
-            _canThrust = true;
-        }
+        _thrustPower = 100;
+        _uiManager.UpdateThrustSlider(_thrustPower);
+        _canThrust = true;
+        _isRechargingThrusters = false;
     }
-    
+
 
 
     IEnumerator ReloadLaserTimer()
