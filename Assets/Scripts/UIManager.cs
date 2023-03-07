@@ -12,12 +12,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _gameOverTxt;
     [SerializeField] private TMP_Text _restartTxt;
     [SerializeField] private Slider _thrustSlider;
+    [SerializeField] private TMP_Text _waveTxt;
     private GameManager _gameManager;
     void Start()
     {
         _scoreText.text = "Score: " + 0;
         _ammoText.text = "Ammo: " + 15 + "/15";
         _gameOverTxt.gameObject.SetActive(false);
+        _waveTxt.gameObject.SetActive(false);
         _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
 
         if (_gameManager == null)
@@ -74,4 +76,16 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ShowWaveNumber(int waveNumber)
+    {
+        _waveTxt.text = "Wave: " + waveNumber;
+        StartCoroutine(FadeWaveNumberText());
+    }
+
+    IEnumerator FadeWaveNumberText()
+    {
+        _waveTxt.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        _waveTxt.CrossFadeAlpha(0.0f, 1.0f, false);
+    }
 }
