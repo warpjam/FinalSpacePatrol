@@ -86,6 +86,6 @@ public class UIManager : MonoBehaviour
     {
         _waveTxt.gameObject.SetActive(true);
         yield return new WaitForSeconds(2.0f);
-        _waveTxt.CrossFadeAlpha(0.0f, 1.0f, false);
+        _waveTxt.gameObject.SetActive(false);;
     }
 }
