@@ -9,9 +9,6 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject[] _enemyPrefab;
     [SerializeField] private GameObject _enemyContainer;
     [SerializeField] private GameObject[] _powerUps;
-    //private int _waveNumber = 1;
-    //private int _enemiesPerWave = 2;
-    //private int _enemiesSpawned = 0;
     private bool _stopSpawning = false;
     private UIManager _uiManager;
 
@@ -31,37 +28,6 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnPowerUpRoutine());
     }
 
-    /*MINE IEnumerator EnemySpawnRoutine()
-    {
-        yield return new WaitForSeconds(2.0f);
-
-        while (_stopSpawning == false)
-        {
-            _uiManager.ShowWaveNumber(_waveNumber);
-            for (int i = 0; i < _enemiesPerWave; i++)
-            {
-                
-                Vector3 _positionToSpawn = new Vector3(Random.Range(-8f, 8f), 6.73f, 0);
-                int _randomEnemy = Random.Range(0, 2);
-                GameObject _newEnemy = Instantiate(_enemyPrefab[_randomEnemy], _positionToSpawn, Quaternion.identity);
-                _newEnemy.transform.parent = _enemyContainer.transform;
-
-                _enemiesSpawned++;
-                if (_enemiesSpawned >= _waveNumber * _enemiesPerWave)
-                {
-                    _enemiesPerWave += 2;
-                    _enemiesSpawned = 0;
-                    _waveNumber++;
-                    yield return new WaitForSeconds(5.0f);
-                }
-                else
-                {
-                    yield return new WaitForSeconds(1.0f);
-                }
-            }
-        }
-    }*/
-    
     IEnumerator EnemySpawnRoutine()
     {
         yield return new WaitForSeconds(4.0f);
@@ -91,7 +57,7 @@ public class SpawnManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("The Boss Should Spawn here");
+                Debug.Log("The Boss Should Spawn Now");
                 // spawn the boss enemy
                 /*Vector3 positionToSpawn = new Vector3(Random.Range(-8f, 8f), 6.73f, 0);
                 GameObject bossEnemy = Instantiate(_bossEnemyPrefab, positionToSpawn, Quaternion.identity);
@@ -108,7 +74,7 @@ public class SpawnManager : MonoBehaviour
         while (_stopSpawning == false)
         {
             Vector3 _positionToSpawn = new Vector3(Random.Range(-8f, 8f), 7, 0);
-            int _randomPowerUp = Random.Range(0, 6);
+            int _randomPowerUp = Random.Range(0, 7);
             if (_randomPowerUp == 5 && Random.value < 0.25)
             {
                 Instantiate(_powerUps[_randomPowerUp], _positionToSpawn, Quaternion.identity);

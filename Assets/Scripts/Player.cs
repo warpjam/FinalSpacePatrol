@@ -319,4 +319,9 @@ public class Player : MonoBehaviour
         _score += points;
         _uiManager.UpdateScore(_score);
     }
+
+    public void JangoMine()
+    {
+        Damage();
+    }
 }
