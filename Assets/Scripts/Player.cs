@@ -273,6 +273,7 @@ public class Player : MonoBehaviour
     public void AmmoDrop()
     {
         _ammoCount = 15;
+        _uiManager.UpdateAmmoCount(_ammoCount);
     }
 
     public void HealthPowerUp()
