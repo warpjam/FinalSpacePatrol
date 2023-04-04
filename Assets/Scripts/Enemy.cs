@@ -12,7 +12,8 @@ public class Enemy : MonoBehaviour
     private float _canFire = -1f;
     [SerializeField] private int _enemyID; // 0 = Basic Enemy, 1 = S-Wave Enemy, 
     private float sSpeed = 2f;
-    private float sRange = 1f; 
+    private float sRange = 1f;
+    private bool _canShoot = true;
 
     void Start()
     {
@@ -87,8 +88,8 @@ public class Enemy : MonoBehaviour
             _enemyExplosion.SetTrigger("OnEnemyDeath");
             _audioSource.Play();
             _enemySpeed = 0;
+            _canShoot = false;
             Destroy(GetComponent<Collider2D>());
-            //Debug.Log("I'm killed by the player");
             Destroy(this.gameObject, 2.8f);
         }
 
@@ -103,6 +104,7 @@ public class Enemy : MonoBehaviour
             _enemyExplosion.SetTrigger("OnEnemyDeath");
             _audioSource.Play();
             _enemySpeed = 0;
+            _canShoot = false;
             Destroy(GetComponent<Collider2D>());
             Destroy(this.gameObject,2.0f);
         }
@@ -116,6 +118,7 @@ public class Enemy : MonoBehaviour
             _enemyExplosion.SetTrigger("OnEnemyDeath");
             _audioSource.Play();
             _enemySpeed = 0;
+            _canShoot = false;
             Destroy(GetComponent<Collider2D>());
             Destroy(this.gameObject,2.0f);
         }
@@ -125,7 +128,7 @@ public class Enemy : MonoBehaviour
 
     private void EnemyFire()
     {
-        if (Time.time > _canFire)
+        if (_canShoot && Time.time > _canFire)
         {
             _fireRate = Random.Range(3f, 7f);
             _canFire = Time.time + _fireRate;
