@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8583603503802721616}
   - component: {fileID: 7296460285359382984}
   - component: {fileID: 4249546068403808387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemySpeed: 4
   _enemyLaserPrefab: {fileID: 2726960220917097216, guid: 28ad9b923d4ed4524a06d96391290257, type: 3}
+  _enemyID: 0
 --- !u!212 &7387049906693779859
 SpriteRenderer:
   m_ObjectHideFlags: 0
