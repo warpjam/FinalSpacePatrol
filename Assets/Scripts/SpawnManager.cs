@@ -42,7 +42,7 @@ public class SpawnManager : MonoBehaviour
             while (enemiesSpawned < enemiesToSpawn)
             {
                 Vector3 positionToSpawn = new Vector3(Random.Range(-8f, 8f), 6.73f, 0);
-                int randomEnemy = Random.Range(0, 2);
+                int randomEnemy = Random.Range(0, 3);
                 GameObject newEnemy = Instantiate(_enemyPrefab[randomEnemy], positionToSpawn, Quaternion.identity);
                 newEnemy.transform.parent = _enemyContainer.transform;
                 enemiesSpawned++;
@@ -58,7 +58,7 @@ public class SpawnManager : MonoBehaviour
             else
             {
                 Debug.Log("The Boss Should Spawn Now");
-                // spawn the boss enemy
+                //TODO spawn the boss enemy
                 /*Vector3 positionToSpawn = new Vector3(Random.Range(-8f, 8f), 6.73f, 0);
                 GameObject bossEnemy = Instantiate(_bossEnemyPrefab, positionToSpawn, Quaternion.identity);
                 bossEnemy.transform.parent = _enemyContainer.transform;*/
@@ -90,6 +90,7 @@ public class SpawnManager : MonoBehaviour
 
     public void OnPlayerDeath()
     {
+        Debug.Log("Death Called Stop Spawning!");
         _stopSpawning = true;
     }
 

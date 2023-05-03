@@ -216,6 +216,7 @@ public class Player : MonoBehaviour
 
         if (_playerLives < 1)
         {
+            Debug.Log("Calling Death!");
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
         }

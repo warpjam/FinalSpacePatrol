@@ -9,6 +9,7 @@ TagManager:
   - PowerUps
   - Shields
   - UniBeam
+  - Missile
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - EnemyLaser
   - Post Processing
   - 
   - 

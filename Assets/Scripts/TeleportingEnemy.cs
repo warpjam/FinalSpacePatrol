@@ -7,6 +7,7 @@ public class TeleportingEnemy : MonoBehaviour
     [SerializeField] private GameObject _laserSpike;
     private float _teleportTimerMin = 3f;
     private float _teleportTimerMax = 12f;
+    [SerializeField] private int _enemyID; // 0 = Basic Enemy, 1 = S-Wave Enemy, 
     private Player _player;
 
     private void Start()
