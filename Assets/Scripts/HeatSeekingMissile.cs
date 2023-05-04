@@ -6,6 +6,7 @@ public class HeatSeekingMissile : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float _detectionRange = 5f;
+    [SerializeField] private GameObject _explosion;
     private Player _player;
 
     void Start()
@@ -47,13 +48,15 @@ public class HeatSeekingMissile : MonoBehaviour
             {
                 player.Damage();
             }
+            Instantiate(_explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         else if (other.CompareTag("Laser"))
         {
             // Destroy laser and self
+            Instantiate(_explosion, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
