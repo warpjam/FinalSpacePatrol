@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8719103410228408691}
   - component: {fileID: -6121679681554501740}
   - component: {fileID: 5518194733293083052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hornet_HeatSeeker
   m_TagString: Enemy
   m_Icon: {fileID: 0}
