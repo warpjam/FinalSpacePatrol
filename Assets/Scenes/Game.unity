@@ -371,19 +371,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452cfd6b16e434feebc73bd2179894b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab:
-  - {fileID: 3382604850397360066, guid: 2cd9a2baeccb54befb9ca27b1614b76c, type: 3}
-  - {fileID: 3382604850397360066, guid: 5f8fe18ff4bf2402380315170041c5e3, type: 3}
-  - {fileID: 8719103410228408690, guid: f69f3a14223d04154ba1fc65e88c42d0, type: 3}
+  _enemyPrefabs:
+  - prefab: {fileID: 3382604850397360066, guid: 2cd9a2baeccb54befb9ca27b1614b76c, type: 3}
+    probability: 0.5
+  - prefab: {fileID: 3382604850397360066, guid: 5f8fe18ff4bf2402380315170041c5e3, type: 3}
+    probability: 0.5
+  - prefab: {fileID: 8719103410228408690, guid: f69f3a14223d04154ba1fc65e88c42d0, type: 3}
+    probability: 0.5
   _enemyContainer: {fileID: 467105098}
   _powerUps:
-  - {fileID: 8119799583411610485, guid: 8dcb2ba2964a442629e1ce0a81b32890, type: 3}
-  - {fileID: 8439091502945529132, guid: b728d5b1e2d704cfba123b3fa1ce5e96, type: 3}
-  - {fileID: 1282907613823454044, guid: 00d8e5c60894340f789914f2fd614983, type: 3}
-  - {fileID: 1768038312069070300, guid: 9402bbf80e9514e8f8359206845c2487, type: 3}
-  - {fileID: 1904600876004185501, guid: 2151629d8bfaa47b4b8fe343a4ea059f, type: 3}
-  - {fileID: 8431853960613297117, guid: b32c1789dc97c41ef869c8f15947e5d7, type: 3}
-  - {fileID: 2601777833644801382, guid: 31585bc474eec43228e31c4cbef2b389, type: 3}
+  - prefab: {fileID: 1768038312069070300, guid: 9402bbf80e9514e8f8359206845c2487, type: 3}
+    probability: 0.6
+  - prefab: {fileID: 1904600876004185501, guid: 2151629d8bfaa47b4b8fe343a4ea059f, type: 3}
+    probability: 0.1
+  - prefab: {fileID: 2601777833644801382, guid: 31585bc474eec43228e31c4cbef2b389, type: 3}
+    probability: 0.3
+  - prefab: {fileID: 1282907613823454044, guid: 00d8e5c60894340f789914f2fd614983, type: 3}
+    probability: 0.3
+  - prefab: {fileID: 8119799583411610485, guid: 8dcb2ba2964a442629e1ce0a81b32890, type: 3}
+    probability: 0.3
+  - prefab: {fileID: 8439091502945529132, guid: b728d5b1e2d704cfba123b3fa1ce5e96, type: 3}
+    probability: 0.15
+  - prefab: {fileID: 8431853960613297117, guid: b32c1789dc97c41ef869c8f15947e5d7, type: 3}
+    probability: 0.1
 --- !u!4 &210243745
 Transform:
   m_ObjectHideFlags: 0

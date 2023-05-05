@@ -3,12 +3,19 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[Serializable]
+public class SpawnableObject
+{
+    public GameObject prefab;
+    [Range(0, 1)] public float probability;
+}
+
 public class SpawnManager : MonoBehaviour
 {
     
-    [SerializeField] private GameObject[] _enemyPrefab;
+    [SerializeField] private SpawnableObject[] _enemyPrefabs;
     [SerializeField] private GameObject _enemyContainer;
-    [SerializeField] private GameObject[] _powerUps;
+    [SerializeField] private SpawnableObject[] _powerUps;
     private bool _stopSpawning = false;
     private UIManager _uiManager;
 
@@ -39,13 +46,24 @@ public class SpawnManager : MonoBehaviour
 
             int enemiesToSpawn = wave < 6 ? wave : Random.Range(1, 4); // set the number of enemies to spawn based on the current wave
             int enemiesSpawned = 0;
+
+            // Get the enemy probabilities
+            float[] enemyProbabilities = new float[_enemyPrefabs.Length];
+            for (int i = 0; i < _enemyPrefabs.Length; i++)
+            {
+                enemyProbabilities[i] = _enemyPrefabs[i].probability;
+            }
+
             while (enemiesSpawned < enemiesToSpawn)
             {
                 Vector3 positionToSpawn = new Vector3(Random.Range(-8f, 8f), 6.73f, 0);
-                int randomEnemy = Random.Range(0, 3);
-                GameObject newEnemy = Instantiate(_enemyPrefab[randomEnemy], positionToSpawn, Quaternion.identity);
+            
+                int randomEnemy = GetRandomIndexWithProbabilities(enemyProbabilities);
+            
+                GameObject newEnemy = Instantiate(_enemyPrefabs[randomEnemy].prefab, positionToSpawn, Quaternion.identity);
                 newEnemy.transform.parent = _enemyContainer.transform;
                 enemiesSpawned++;
+
                 yield return new WaitForSeconds(1.0f);
             }
 
@@ -66,25 +84,43 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-
-
     IEnumerator SpawnPowerUpRoutine()
     {
         yield return new WaitForSeconds(3.0f);
         while (_stopSpawning == false)
         {
             Vector3 _positionToSpawn = new Vector3(Random.Range(-8f, 8f), 7, 0);
-            int _randomPowerUp = Random.Range(0, 7);
-            if (_randomPowerUp == 5 && Random.value < 0.25)
+
+            // Get the power-up probabilities
+            float[] powerUpProbabilities = new float[_powerUps.Length];
+            for (int i = 0; i < _powerUps.Length; i++)
             {
-                Instantiate(_powerUps[_randomPowerUp], _positionToSpawn, Quaternion.identity);
+                powerUpProbabilities[i] = _powerUps[i].probability;
             }
-            else if (_randomPowerUp != 5)
-            {
-                Instantiate(_powerUps[_randomPowerUp], _positionToSpawn, Quaternion.identity);
-            }
+
+            int _randomPowerUp = GetRandomIndexWithProbabilities(powerUpProbabilities);
+
+            Instantiate(_powerUps[_randomPowerUp].prefab, _positionToSpawn, Quaternion.identity);
+
             yield return new WaitForSeconds(Random.Range(3, 11));
         }
+    }
+
+
+    private int GetRandomIndexWithProbabilities(float[] probabilities)
+    {
+        float total = 0;
+        float[] cumulativeProbabilities = new float[probabilities.Length];
+
+        for (int i = 0; i < probabilities.Length; i++)
+        {
+            total += probabilities[i];
+            cumulativeProbabilities[i] = total;
+        }
+
+        float randomNumber = Random.Range(0, total);
+        int index = Array.FindIndex(cumulativeProbabilities, x => x >= randomNumber);
+        return index;
     }
 
 
