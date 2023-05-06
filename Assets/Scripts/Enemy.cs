@@ -93,37 +93,29 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject, 2.8f);
         }
 
-        if (other.CompareTag("Laser"))
+        if (other.CompareTag("Laser") || other.CompareTag("UniBeam"))
         {
             Destroy(other.gameObject);
 
-            if (_player != null)
+            EnemyShield enemyShield = GetComponent<EnemyShield>();
+            if (enemyShield != null && enemyShield.IsShieldActive())
             {
-                _player.ScoreCalculator(10);
+                enemyShield.DeactivateShield();
             }
-            _enemyExplosion.SetTrigger("OnEnemyDeath");
-            _audioSource.Play();
-            _enemySpeed = 0;
-            _canShoot = false;
-            Destroy(GetComponent<Collider2D>());
-            Destroy(this.gameObject,2.0f);
-        }
-
-        if (other.CompareTag("UniBeam"))
-        {
-            if (_player != null)
+            else
             {
-                _player.ScoreCalculator(10);
+                if (_player != null)
+                {
+                    _player.ScoreCalculator(10);
+                }
+                _enemyExplosion.SetTrigger("OnEnemyDeath");
+                _audioSource.Play();
+                _enemySpeed = 0;
+                _canShoot = false;
+                Destroy(GetComponent<Collider2D>());
+                Destroy(this.gameObject, 2.0f);
             }
-            _enemyExplosion.SetTrigger("OnEnemyDeath");
-            _audioSource.Play();
-            _enemySpeed = 0;
-            _canShoot = false;
-            Destroy(GetComponent<Collider2D>());
-            Destroy(this.gameObject,2.0f);
         }
-        
- 
     }
 
     private void EnemyFire()
