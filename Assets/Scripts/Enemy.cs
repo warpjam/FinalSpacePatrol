@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     private float sRange = 1f;
     private bool _canShoot = true;
 
-    void Start()
+    protected virtual void Start()
     {
         _player = GameObject.Find("Player").GetComponent<Player>();
         _enemyExplosion = GetComponent<Animator>();
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void Update()
+    protected virtual void Update()
     {
         EnemyMovement();
         EnemyFire();
