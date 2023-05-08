@@ -10,6 +10,7 @@ TagManager:
   - Shields
   - UniBeam
   - Missile
+  - BackLaser
   layers:
   - Default
   - TransparentFX
