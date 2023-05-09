@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7172702313915837952}
   - component: {fileID: 208193881347009442}
   - component: {fileID: 5895868525600756347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AmmoDropPowerUp
   m_TagString: PowerUps
   m_Icon: {fileID: 0}

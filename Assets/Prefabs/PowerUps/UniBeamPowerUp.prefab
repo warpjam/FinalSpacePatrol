@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8431853960613297106}
   - component: {fileID: 8431853960613297107}
   - component: {fileID: 8431853960613297116}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UniBeamPowerUp
   m_TagString: PowerUps
   m_Icon: {fileID: 0}

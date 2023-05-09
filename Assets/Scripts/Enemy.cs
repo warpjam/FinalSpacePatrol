@@ -40,8 +40,24 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         EnemyMovement();
-        EnemyFire();
+
+        // Detect powerups in front of the enemy
+        GameObject detectedPowerUp = DetectPowerUp();
+        if (detectedPowerUp != null)
+        {
+            Debug.Log("Must Kill PowerUps");
+            EnemyFire();
+        }
+        else if (Time.time > _canFire)
+        {
+            // Fire randomly if no powerup detected
+            EnemyFire();
+            _canFire = Time.time + _fireRate;
+        }
     }
+
+
+
 
     private void EnemyMovement()
     {
@@ -134,5 +150,37 @@ public class Enemy : MonoBehaviour
 
         }
     }
+    
+    private GameObject DetectPowerUp()
+    {
+        // Define the direction of the Raycast (downwards)
+        Vector2 direction = -transform.up;
+
+        // The length of the Raycast (e.g., 10 units)
+        float distance = 10f;
+
+        // Create a LayerMask for the PowerUp layer or use the "PowerUps" tag
+        int powerUpLayer = LayerMask.NameToLayer("PowerUps"); // Replace "PowerUps" with the name of the layer, if you created one
+        LayerMask powerUpLayerMask = 1 << powerUpLayer;
+
+        // Perform the Raycast and store the hit information, using the layer mask
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, powerUpLayerMask);
+
+        // Check if the Raycast hit something
+        if (hit.collider != null)
+        {
+            // Check if the hit object has the "PowerUps" tag
+            if (hit.collider.CompareTag("PowerUps"))
+            {
+                // A powerup is in front of the enemy
+                return hit.collider.gameObject;
+            }
+        }
+
+        // No powerup detected
+        return null;
+    }
+
+
 
 }

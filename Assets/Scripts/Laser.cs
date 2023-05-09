@@ -71,6 +71,16 @@ public class Laser : MonoBehaviour
                 player.Damage();
             }
         }
+        else if (other.CompareTag("PowerUps") && (_isEnemyLasers == true || _isBackLaser == true))
+        {
+            Destroy(other.gameObject); // destroy the powerup
+            if (!_isBackLaser)
+            {
+                Destroy(this.gameObject); // destroy the laser itself if it's not a back laser
+            }
+        }
     }
+
+
 
 }

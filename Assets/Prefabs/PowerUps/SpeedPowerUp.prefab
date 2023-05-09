@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8439091502945529129}
   - component: {fileID: 8439091502945529130}
   - component: {fileID: 8439091502945529131}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpeedPowerUp
   m_TagString: PowerUps
   m_Icon: {fileID: 0}

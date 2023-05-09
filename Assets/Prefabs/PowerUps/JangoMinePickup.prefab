@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7405608668158922654}
   - component: {fileID: 8983262000176853900}
   - component: {fileID: 5390924257528727991}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JangoMinePickup
   m_TagString: PowerUps
   m_Icon: {fileID: 0}
