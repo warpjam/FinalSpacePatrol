@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject _enemyLaserPrefab;
     private float _fireRate = 3.0f;
     private float _canFire = -1f;
-    [SerializeField] private int _enemyID; // 0 = Basic Enemy, 1 = S-Wave Enemy, 
+    [SerializeField] private int _enemyID; // 0 = Basic Enemy, 1 = S-Wave Enemy, 2- Missile, 3- Ramming 4- BackFire 
     private float sSpeed = 2f;
     private float sRange = 1f;
     private bool _canShoot = true;

@@ -7,6 +7,7 @@ public class Laser : MonoBehaviour
 {
     [SerializeField] private int _laserSpeed = 8;
     private bool _isEnemyLasers = false;
+    private bool _isBackLaser = false;
 
 
     void Update()
@@ -49,6 +50,11 @@ public class Laser : MonoBehaviour
         }
     }
 
+    public void AssignBackLaser()
+    {
+        _isBackLaser = true;
+    }
+
     public void AssignEnemyLaser()
     {
         _isEnemyLasers = true;
@@ -56,7 +62,7 @@ public class Laser : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && _isEnemyLasers == true)
+        if (other.CompareTag("Player") && (_isEnemyLasers == true || _isBackLaser == true))
         {
             Player player = other.GetComponent<Player>();
 
@@ -66,4 +72,5 @@ public class Laser : MonoBehaviour
             }
         }
     }
+
 }

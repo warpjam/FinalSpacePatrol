@@ -170,7 +170,7 @@ public class Player : MonoBehaviour
 
     IEnumerator ReloadLaserTimer()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.6f);
         _canFireLaser = true;
     }
 
