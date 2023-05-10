@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     private UIManager _uiManager;
     private AudioSource _audioSource;
     private CameraShake _cameraShake;
+    private bool _canAttractPowerUps = true; 
     
 
 
@@ -86,6 +87,12 @@ public class Player : MonoBehaviour
             {
                 FireMainWeapons();
             }
+
+        if (Input.GetKeyDown((KeyCode.C)))
+        {
+            AttractPowerUps();
+            StartCoroutine(AttractPowerUpsCooldown());
+        }
         
     }
 
@@ -325,4 +332,26 @@ public class Player : MonoBehaviour
     {
         Damage();
     }
+    
+    private void AttractPowerUps()
+    {
+        GameObject[] powerUps = GameObject.FindGameObjectsWithTag("PowerUps");
+        foreach (GameObject powerUp in powerUps)
+        {
+            Rigidbody2D powerUpRigidbody = powerUp.GetComponent<Rigidbody2D>();
+            if (powerUpRigidbody != null)
+            {
+                Vector2 direction = (transform.position - powerUp.transform.position).normalized;
+                powerUpRigidbody.velocity = direction * _playerSpeed * 2;
+            }
+        }
+    }
+    
+    IEnumerator AttractPowerUpsCooldown()
+    {
+        _canAttractPowerUps = false;
+        yield return new WaitForSeconds(8.0f);
+        _canAttractPowerUps = true;
+    }
+
 }
