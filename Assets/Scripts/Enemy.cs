@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int _enemySpeed = 4;
+    [SerializeField] protected int _enemySpeed = 4;
     private Player _player;
     private Animator _enemyExplosion;
     private AudioSource _audioSource;
@@ -92,6 +92,8 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        DodgingEnemy dodgingEnemy = GetComponent<DodgingEnemy>();
+
         if (other.CompareTag("Player"))
         {
             Player player = other.transform.GetComponent<Player>();
@@ -118,7 +120,7 @@ public class Enemy : MonoBehaviour
             {
                 enemyShield.DeactivateShield();
             }
-            else
+            else if (dodgingEnemy == null) // Only destroy the enemy if it's not a DodgingEnemy
             {
                 if (_player != null)
                 {
@@ -133,6 +135,7 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
 
     private void EnemyFire()
     {

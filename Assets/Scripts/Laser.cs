@@ -6,7 +6,7 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     [SerializeField] private int _laserSpeed = 8;
-    private bool _isEnemyLasers = false;
+    public bool _isEnemyLasers = false;
     private bool _isBackLaser = false;
 
 
@@ -79,8 +79,13 @@ public class Laser : MonoBehaviour
                 Destroy(this.gameObject); // destroy the laser itself if it's not a back laser
             }
         }
+        else if (other.CompareTag("DodgingEnemy") && !_isEnemyLasers)
+        {
+            DodgingEnemy dodgingEnemy = other.GetComponent<DodgingEnemy>();
+            if (dodgingEnemy != null && transform.position.y < dodgingEnemy.transform.position.y)
+            {
+                dodgingEnemy.Dodge();
+            }
+        }
     }
-
-
-
 }
