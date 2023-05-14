@@ -11,6 +11,8 @@ TagManager:
   - UniBeam
   - Missile
   - BackLaser
+  - DodgingEnemy
+  - PlayerMissile
   layers:
   - Default
   - TransparentFX

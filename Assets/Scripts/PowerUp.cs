@@ -3,7 +3,7 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     [SerializeField] private float _powerUpSpeed = 2;
-    [SerializeField] private int _powerUpID; //0 = TripleShot, 1 = Speed, 2 = Shields, 3 = Ammo, 4 = Health, 5 = Unibeam, 6 = JangoMine, 
+    [SerializeField] private int _powerUpID; //0 = TripleShot, 1 = Speed, 2 = Shields, 3 = Ammo, 4 = Health, 5 = Unibeam, 6 = JangoMine, 7 = HomingProjectile
     private AudioSource _audioSource;
     [SerializeField] private AudioClip _powerUpSound;
     
@@ -14,8 +14,6 @@ public class PowerUp : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -47,6 +45,9 @@ public class PowerUp : MonoBehaviour
                         break;
                     case 6:
                         player.JangoMine();
+                        break;
+                    case 7:
+                        player.HomingMissileActive(); // This will be a new method in the Player script.
                         break;
                     default:
                         Debug.Log("Default Value");

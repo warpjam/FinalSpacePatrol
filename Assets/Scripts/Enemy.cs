@@ -111,7 +111,7 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject, 2.8f);
         }
 
-        if (other.CompareTag("Laser") || other.CompareTag("UniBeam"))
+        if (other.CompareTag("Laser") || other.CompareTag("UniBeam") || other.CompareTag(("PlayerMissile")))
         {
             Destroy(other.gameObject);
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -29,6 +30,10 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _uniBeamPrefab;
     [SerializeField] private bool _uniBeamActive;
     [SerializeField] private AudioClip _uniBeamSound;
+    [SerializeField] private GameObject _homingMissilePrefab;
+    private bool _homingMissileActive = false;
+    private int _homingMissileCount = 3;
+    private bool _isMissileMode = false; 
     
     [Header("Shields-Lives-Damage")]
     [SerializeField] private int _playerLives = 3;
@@ -94,28 +99,49 @@ public class Player : MonoBehaviour
             StartCoroutine(AttractPowerUpsCooldown());
         }
         
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SwitchToMissileMode();
+        }
+        
     }
 
     private void FireMainWeapons()
     {
-        if (_tripleShotActive == true)
+        if (_isMissileMode)
         {
-            
-            Instantiate(_tripleShotPrefab, transform.position + new Vector3(0, 0f, 0), Quaternion.identity);
-            _canFireLaser = false;
-            StartCoroutine(ReloadLaserTimer());
+            if (_homingMissileCount > 0)
+            {
+                Instantiate(_homingMissilePrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
+                _homingMissileCount--;
+                _uiManager.UpdateMissileCount(_homingMissileCount);
+                return;
+            }
+            else
+            {
+                _isMissileMode = false;
+                _uiManager.SetMissileMode(false);
+            }
         }
-        else
+
+        if (_tripleShotActive == true && _ammoCount > 0)
         {
+            Instantiate(_tripleShotPrefab, transform.position + new Vector3(0, 0f, 0), Quaternion.identity);
             _ammoCount--;
             _uiManager.UpdateAmmoCount(_ammoCount);
-            Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
-            _canFireLaser = false;
-            StartCoroutine(ReloadLaserTimer()); 
         }
-        
+        else if (_ammoCount > 0)
+        {
+            Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
+            _ammoCount--;
+            _uiManager.UpdateAmmoCount(_ammoCount);
+        }
+
+        _canFireLaser = false;
+        StartCoroutine(ReloadLaserTimer());
         _audioSource.Play();
     }
+
 
     private void PlayerMovement()
     {
@@ -352,6 +378,30 @@ public class Player : MonoBehaviour
         _canAttractPowerUps = false;
         yield return new WaitForSeconds(8.0f);
         _canAttractPowerUps = true;
+    }
+
+    public void HomingMissileActive()
+    {
+        _homingMissileCount += 3;
+        _uiManager.UpdateMissileCount(_homingMissileCount);
+    }
+
+    private void SwitchToMissileMode()
+    {
+        if (_homingMissileCount > 0)
+        {
+            _isMissileMode = !_isMissileMode;
+            _uiManager.SetMissileMode(_isMissileMode);
+        }
+        else
+        {
+            _isMissileMode = false;
+        }
+
+        if (_ammoCount <= 0)
+        {
+            _uiManager.SetAmmoCountZero();
+        }
     }
 
 }

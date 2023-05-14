@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _restartTxt;
     [SerializeField] private Slider _thrustSlider;
     [SerializeField] private TMP_Text _waveTxt;
+    [SerializeField] private TMP_Text _missileCountText;
+    private bool _isMissileMode = false;
     private GameManager _gameManager;
     void Start()
     {
@@ -20,6 +22,7 @@ public class UIManager : MonoBehaviour
         _ammoText.text = "Ammo: " + 15 + "/15";
         _gameOverTxt.gameObject.SetActive(false);
         _waveTxt.gameObject.SetActive(false);
+        _missileCountText.text = "Missiles: " + 0 + "/3";
         _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
 
         if (_gameManager == null)
@@ -45,6 +48,7 @@ public class UIManager : MonoBehaviour
         }
 
     }
+  
 
     public void UpdateThrustSlider(float charge)
     {
@@ -59,10 +63,31 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(GameOverFlickerRoutine());
     }
+    
+    public void UpdateMissileCount(int missileCount)
+    {
+        _missileCountText.text = "Missiles: " + missileCount.ToString();
+        if (missileCount <= 0)
+        {
+            _missileCountText.color = Color.grey;
+        }
+        else
+        {
+            _missileCountText.color = _isMissileMode ? Color.green : Color.white;
+        }
+    }
 
     public void UpdateAmmoCount(int ammoCount)
     {
         _ammoText.text = "Ammo: " + ammoCount.ToString() + "/15";
+        if (ammoCount <= 0)
+        {
+            _ammoText.color = Color.grey;
+        }
+        else
+        {
+            _ammoText.color = _isMissileMode ? Color.white : Color.green;
+        }
     }
 
     IEnumerator GameOverFlickerRoutine()
@@ -88,4 +113,26 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         _waveTxt.gameObject.SetActive(false);;
     }
+    
+    public void SetMissileMode(bool isMissileMode)
+    {
+        _isMissileMode = isMissileMode;
+        if (_isMissileMode)
+        {
+            _ammoText.color = Color.white;
+            _missileCountText.color = Color.green;
+        }
+        else
+        {
+            _ammoText.color = Color.green;
+            _missileCountText.color = Color.white;
+        }
+    }
+
+    
+    public void SetAmmoCountZero()
+    {
+        _ammoText.color = Color.grey;
+    }
+
 }
