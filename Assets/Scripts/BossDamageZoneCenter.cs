@@ -1,0 +1,34 @@
+using UnityEngine;
+
+public class BossDamageZoneCenter : MonoBehaviour
+{
+    [SerializeField] private float _damageMultiplier = 5;
+    private FinalBoss _boss;
+
+    void Start()
+    {
+        _boss = GetComponentInParent<FinalBoss>();
+        if (_boss == null)
+        {
+            Debug.Log("Boss component not found on parent of " + gameObject.name);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        OnHit(other.gameObject);
+    }
+
+    private void OnHit(GameObject hitObject)
+    {
+        if (hitObject.CompareTag("PlayerMissile"))
+        {
+            _boss.TakeDamage(5 * _damageMultiplier, hitObject.transform.position);
+        }
+        else if (hitObject.CompareTag("Laser"))
+        {
+            _boss.TakeDamage(2 * _damageMultiplier, hitObject.transform.position);
+        }
+        Destroy(hitObject, 0.5f);
+    }
+}

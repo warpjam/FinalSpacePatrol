@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,6 +16,7 @@ public class SpawnManager : MonoBehaviour
 {
     
     [SerializeField] private SpawnableObject[] _enemyPrefabs;
+    [SerializeField] private GameObject _bossPrefab;
     [SerializeField] private GameObject _enemyContainer;
     [SerializeField] private SpawnableObject[] _powerUps;
     private bool _stopSpawning = false;
@@ -75,11 +78,7 @@ public class SpawnManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("The Boss Should Spawn Now");
-                //TODO spawn the boss enemy
-                /*Vector3 positionToSpawn = new Vector3(Random.Range(-8f, 8f), 6.73f, 0);
-                GameObject bossEnemy = Instantiate(_bossEnemyPrefab, positionToSpawn, Quaternion.identity);
-                bossEnemy.transform.parent = _enemyContainer.transform;*/
+                SpawnBoss();
             }
         }
     }
@@ -123,11 +122,20 @@ public class SpawnManager : MonoBehaviour
         return index;
     }
 
+    public void SpawnBoss()
+    {
+        Vector3 positionToSpawn = new Vector3(0, 6.73f, 0);
+        GameObject boss = Instantiate(_bossPrefab, positionToSpawn, Quaternion.identity);
+        boss.transform.parent = _enemyContainer.transform;
+    }
+
 
     public void OnPlayerDeath()
     {
         Debug.Log("Death Called Stop Spawning!");
         _stopSpawning = true;
     }
+    
+    
 
 }
