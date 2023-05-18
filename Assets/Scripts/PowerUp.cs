@@ -47,7 +47,7 @@ public class PowerUp : MonoBehaviour
                         player.JangoMine();
                         break;
                     case 7:
-                        player.HomingMissileActive(); // This will be a new method in the Player script.
+                        player.HomingMissileActive(); 
                         break;
                     default:
                         Debug.Log("Default Value");

@@ -127,6 +127,8 @@ public class SpawnManager : MonoBehaviour
         Vector3 positionToSpawn = new Vector3(0, 6.73f, 0);
         GameObject boss = Instantiate(_bossPrefab, positionToSpawn, Quaternion.identity);
         boss.transform.parent = _enemyContainer.transform;
+
+        StartCoroutine(SpawnPowerUpRoutine());
     }
 
 
