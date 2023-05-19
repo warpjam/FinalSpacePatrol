@@ -23,7 +23,7 @@ public class BossDamageZoneRight : MonoBehaviour
 
     private void OnHit(GameObject hitObject)
     {
-        if (hitObject.CompareTag("PlayerMissile"))
+        if (hitObject.CompareTag("PlayerMissile") || hitObject.CompareTag("UniBeam"))
         {
             _boss.TakeDamage(5 * _damageMultiplier, hitObject.transform.position);
         }

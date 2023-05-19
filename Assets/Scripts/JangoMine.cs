@@ -3,7 +3,7 @@ using UnityEngine;
 public class JangoMine : MonoBehaviour
 {
     [SerializeField] private GameObject _explosionPrefab;
-    [SerializeField] private float _explosionRadius = 1f;
+    [SerializeField] private float _explosionRadius = 10f;
     private Player _player;
 
     private void Start()

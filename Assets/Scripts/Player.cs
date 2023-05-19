@@ -333,15 +333,15 @@ public class Player : MonoBehaviour
         _canFireLaser = false;
         AudioSource.PlayClipAtPoint(_uniBeamSound, transform.position);
         _uniBeamPrefab.SetActive(true);
-        StartCoroutine(UnibeamPowerDownRoutine());
+        StartCoroutine(UniBeamPowerDownRoutine());
 
     }
 
-    IEnumerator UnibeamPowerDownRoutine()
+    IEnumerator UniBeamPowerDownRoutine()
     {
         while (_uniBeamActive == true)
         {
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(6.0f);
             _uniBeamActive = false;
             _canFireLaser = true;
             _uniBeamPrefab.SetActive(false);

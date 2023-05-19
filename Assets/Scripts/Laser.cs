@@ -6,6 +6,8 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     [SerializeField] private int _laserSpeed = 8;
+    [SerializeField] private GameObject _explosionPrefab;
+    
     public bool _isEnemyLasers = false;
     private bool _isBackLaser = false;
 
@@ -73,6 +75,12 @@ public class Laser : MonoBehaviour
         }
         else if (other.CompareTag("PowerUps") && (_isEnemyLasers == true || _isBackLaser == true))
         {
+            // Instantiate the explosion prefab at the powerup's location
+            if (_explosionPrefab != null)
+            {
+                Instantiate(_explosionPrefab, other.transform.position, Quaternion.identity);
+            }
+
             Destroy(other.gameObject); // destroy the powerup
             if (!_isBackLaser)
             {

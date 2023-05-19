@@ -159,7 +159,7 @@ public class Enemy : MonoBehaviour
         // Define the direction of the Raycast (downwards)
         Vector2 direction = -transform.up;
 
-        // The length of the Raycast (e.g., 10 units)
+        // The length of the Raycast
         float distance = 10f;
 
         // Create a LayerMask for the PowerUp layer or use the "PowerUps" tag

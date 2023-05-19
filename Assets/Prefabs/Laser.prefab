@@ -147,3 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _laserSpeed: 20
+  _explosionPrefab: {fileID: 5246540507669329212, guid: 410f9618a5fea42ae9046135ff16535f, type: 3}
+  _isEnemyLasers: 0
