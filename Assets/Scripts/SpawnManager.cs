@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -59,10 +57,10 @@ public class SpawnManager : MonoBehaviour
 
             while (enemiesSpawned < enemiesToSpawn)
             {
-                Vector3 positionToSpawn = new Vector3(Random.Range(-8f, 8f), 6.73f, 0);
-            
+                Vector3 positionToSpawn = GetValidSpawnPosition();
+
                 int randomEnemy = GetRandomIndexWithProbabilities(enemyProbabilities);
-            
+
                 GameObject newEnemy = Instantiate(_enemyPrefabs[randomEnemy].prefab, positionToSpawn, Quaternion.identity);
                 newEnemy.transform.parent = _enemyContainer.transform;
                 enemiesSpawned++;
@@ -82,6 +80,23 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
+
+    Vector3 GetValidSpawnPosition()
+    {
+        float minY = -2.0f; // Minimum Y-axis value for enemy spawning
+        float maxY = 6.73f; // Maximum Y-axis value for enemy spawning
+        float spawnX = Random.Range(-8f, 8f);
+        float spawnY = maxY;
+
+        // Loop until a valid spawn position is found
+        while (Physics2D.OverlapCircle(new Vector2(spawnX, spawnY), 0.5f) != null)
+        {
+            spawnY = Random.Range(minY, maxY);
+        }
+
+        return new Vector3(spawnX, spawnY, 0f);
+    }
+
 
     IEnumerator SpawnPowerUpRoutine()
     {
