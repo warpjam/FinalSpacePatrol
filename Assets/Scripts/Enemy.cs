@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
                 
             }
 
-            enemyShield.DeactivateShield();
+            //enemyShield.DeactivateShield();
             _enemyExplosion.SetTrigger("OnEnemyDeath");
             _audioSource.Play();
             _enemySpeed = 0;
