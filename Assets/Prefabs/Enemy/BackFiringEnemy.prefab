@@ -104,6 +104,7 @@ MonoBehaviour:
   _backLaserPrefab: {fileID: 2303000253455681353, guid: 668796246bf8243dead41f1e7a2198c3, type: 3}
   _fireRate: 1
   _speed: 3
+  _explosionPrefab: {fileID: 5246540507669329212, guid: 410f9618a5fea42ae9046135ff16535f, type: 3}
 --- !u!61 &1662812917432489233
 BoxCollider2D:
   m_ObjectHideFlags: 0

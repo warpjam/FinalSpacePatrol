@@ -102,7 +102,8 @@ MonoBehaviour:
   _enemySpeed: 3
   _heatSeekingMissilePrefab: {fileID: 349712305723274890, guid: fa7dcbb2c0d7c46b2b9b51d317a576c3, type: 3}
   _enemyID: 2
-  _fireRate: 3
+  _fireRate: 5
+  _explosionPrefab: {fileID: 5246540507669329212, guid: 410f9618a5fea42ae9046135ff16535f, type: 3}
 --- !u!61 &-6121679681554501740
 BoxCollider2D:
   m_ObjectHideFlags: 0

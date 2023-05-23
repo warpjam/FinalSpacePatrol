@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip _uniBeamSound;
     [SerializeField] private GameObject _homingMissilePrefab;
     private bool _homingMissileActive = false;
-    private int _homingMissileCount = 0;
+    [SerializeField] private int _homingMissileCount = 3;
     private bool _isMissileMode = false; 
     
     [Header("Shields-Lives-Damage")]

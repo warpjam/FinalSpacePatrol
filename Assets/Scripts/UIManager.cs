@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
         _ammoText.text = "Ammo: " + 15 + "/15";
         _gameOverTxt.gameObject.SetActive(false);
         _waveTxt.gameObject.SetActive(false);
-        _missileCountText.text = "Missiles: " + 0 + "/3";
+        _missileCountText.text = "Missiles: " + 3;
         _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
 
         if (_gameManager == null)

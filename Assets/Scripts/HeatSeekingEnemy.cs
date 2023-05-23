@@ -10,7 +10,8 @@ public class HeatSeekingEnemy : MonoBehaviour
     [SerializeField] private int _enemyID; // 0 = Basic Enemy, 1 = S-Wave Enemy, 2 = Hornet_HeatSeeker
     private float sSpeed = 2f;
     private float sRange = 1f;
-    [SerializeField] private float _fireRate = 3.0f;
+    [SerializeField] private float _fireRate = 5.0f;
+    [SerializeField] private GameObject _explosionPrefab; 
     private float _nextFire = -1f;
     
 
@@ -71,10 +72,11 @@ public class HeatSeekingEnemy : MonoBehaviour
                 player.Damage();
             }
 
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
-        if (other.CompareTag("Laser"))
+        if (other.CompareTag("Laser") || other.CompareTag("PlayerMissile"))
         {
             Destroy(other.gameObject);
 
@@ -82,7 +84,7 @@ public class HeatSeekingEnemy : MonoBehaviour
             {
                 _player.ScoreCalculator(10);
             }
-
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         
@@ -92,12 +94,9 @@ public class HeatSeekingEnemy : MonoBehaviour
             {
                 _player.ScoreCalculator(10);
             }
-            //TODO find another explosion ani _enemyExplosion.SetTrigger("OnEnemyDeath");
-            //TODO link the sound to _audioSource.Play();
-            _enemySpeed = 0;
-            //_canShoot = false;
-            Destroy(GetComponent<Collider2D>());
-            Destroy(this.gameObject,2.0f);
+            //Destroy(GetComponent<Collider2D>());
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 

@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMissile : MonoBehaviour
 {
     [SerializeField] private float _speed = 10f;
-    [SerializeField] private float _rotationSpeed = 5f; 
+    [SerializeField] private float _rotationSpeed = 5f;
+    [SerializeField] private float _selfDestructTime = 5f;
+    [SerializeField] private GameObject _explosionPrefab;
     private GameObject _target;
 
     void Start()
@@ -14,6 +17,8 @@ public class PlayerMissile : MonoBehaviour
         {
             Debug.Log("No enemies found.");
         }
+
+        StartCoroutine(SelfDestructCoRoutine());
     }
 
     void Update()
@@ -67,5 +72,17 @@ public class PlayerMissile : MonoBehaviour
             }
         }
         return closestEnemy;
+    }
+
+    private IEnumerator SelfDestructCoRoutine()
+    {
+        yield return new WaitForSeconds(_selfDestructTime);
+
+        Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+
+        if (_target == null)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

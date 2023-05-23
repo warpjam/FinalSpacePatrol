@@ -7,29 +7,18 @@ public class BackFiringEnemy : MonoBehaviour
     private float _nextFire;
     [SerializeField] private float _speed = 4f;
     private Player _player;
-    private Animator _enemyExplosion;
-    private AudioSource _audioSource; 
+    [SerializeField] private GameObject _explosionPrefab;
+
     
 
     private void Start()
     {
         _nextFire = Time.time + _fireRate;
         _player = GameObject.Find("Player").GetComponent<Player>();
-        _enemyExplosion = GetComponent<Animator>();
-        _audioSource = GetComponent<AudioSource>();
+
         if (_player == null)
         {
             Debug.Log("The player is Null!");
-        }
-
-        if (_enemyExplosion == null)
-        {
-            Debug.Log("The Enemy Explosion is Null!");
-        }
-
-        if (_audioSource == null)
-        {
-            Debug.Log("The enemy AudioSource is null!");
         }
     }
 
@@ -106,11 +95,11 @@ public class BackFiringEnemy : MonoBehaviour
                 player.Damage();
             }
 
-            _enemyExplosion.SetTrigger("OnEnemyDeath");
-            _audioSource.Play();
+
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             _speed = 0;
             Destroy(GetComponent<Collider2D>());
-            Destroy(this.gameObject, 2.8f);
+            Destroy(this.gameObject);
         }
 
         if (other.CompareTag("Laser") || other.CompareTag("UniBeam") || other.CompareTag("PlayerMissile"))
@@ -128,12 +117,10 @@ public class BackFiringEnemy : MonoBehaviour
                 {
                     _player.ScoreCalculator(10);
                 }
-                _enemyExplosion.SetTrigger("OnEnemyDeath");
-                _audioSource.Play();
+                Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
                 _speed = 0;
-                //_canShoot = false;
                 Destroy(GetComponent<Collider2D>());
-                Destroy(this.gameObject, 2.0f);
+                Destroy(this.gameObject);
             }
         }
     }
