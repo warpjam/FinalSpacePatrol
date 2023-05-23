@@ -102,7 +102,15 @@ public class Enemy : MonoBehaviour
             {
                 player.Damage();
             }
+            
+            EnemyShield enemyShield = GetComponent<EnemyShield>();
+            if (enemyShield != null && enemyShield.IsShieldActive())
+            {
+                enemyShield.DeactivateShield();
+                
+            }
 
+            enemyShield.DeactivateShield();
             _enemyExplosion.SetTrigger("OnEnemyDeath");
             _audioSource.Play();
             _enemySpeed = 0;
@@ -119,6 +127,7 @@ public class Enemy : MonoBehaviour
             if (enemyShield != null && enemyShield.IsShieldActive())
             {
                 enemyShield.DeactivateShield();
+                
             }
             else if (dodgingEnemy == null) // Only destroy the enemy if it's not a DodgingEnemy
             {
