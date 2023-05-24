@@ -2297,6 +2297,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4170443431462791394, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6164231264863467241, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2307,7 +2311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6164231264863467241, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.73
       objectReference: {fileID: 0}
     - target: {fileID: 6164231264863467241, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2358,9 +2362,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 67529fc7ad2b441ea81098c6f5a0911a, type: 3}
     - target: {fileID: 6164231264863467247, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
+      propertyPath: _missileLaunch
+      value: 
+      objectReference: {fileID: 8300000, guid: 0b1234df64b0047d990702fabc5988da, type: 3}
+    - target: {fileID: 6164231264863467247, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
+      propertyPath: _switchWeapons
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d0cd2c8840c044b08589d5441f655b0, type: 3}
+    - target: {fileID: 6164231264863467247, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
       propertyPath: _uniBeamPrefab
       value: 
       objectReference: {fileID: 1750251397}
+    - target: {fileID: 6164231264863467247, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
+      propertyPath: _switchToWeapon
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d0cd2c8840c044b08589d5441f655b0, type: 3}
     - target: {fileID: 6164231264863467247, guid: a45909f8c7a8d447d85ce66e9f2d1a36, type: 3}
       propertyPath: _homingMissilePrefab
       value: 

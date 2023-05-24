@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7122490952491840854}
-  - component: {fileID: 483569744460424199}
   - component: {fileID: 7387049906693779859}
   - component: {fileID: 2058061042021289839}
   - component: {fileID: 8583603503802721616}
   - component: {fileID: 7296460285359382984}
   - component: {fileID: 4249546068403808387}
+  - component: {fileID: -5103415451687905681}
   m_Layer: 6
   m_Name: EnemyS
   m_TagString: Enemy
@@ -37,21 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &483569744460424199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3382604850397360066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e16983da24f4bed9d12384d7f6dd17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemySpeed: 4
-  _enemyLaserPrefab: {fileID: 2726960220917097216, guid: 28ad9b923d4ed4524a06d96391290257, type: 3}
-  _enemyID: 1
 --- !u!212 &7387049906693779859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -267,3 +252,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1792438, y: 2.7490158}
   m_EdgeRadius: 0
+--- !u!114 &-5103415451687905681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382604850397360066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a705b5b1ee3fd4e539e5489338566b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemySpeed: 3
+  _enemyLaserPrefab: {fileID: 2726960220917097216, guid: 28ad9b923d4ed4524a06d96391290257, type: 3}

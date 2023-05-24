@@ -5,14 +5,19 @@ using UnityEngine;
 
 public class HeatSeekingEnemy : MonoBehaviour
 {
-    [SerializeField] private int _enemySpeed = 4;
+    [SerializeField] private int _enemySpeed = 3;
     [SerializeField] private GameObject _heatSeekingMissilePrefab;
-    [SerializeField] private int _enemyID; // 0 = Basic Enemy, 1 = S-Wave Enemy, 2 = Hornet_HeatSeeker
-    private float sSpeed = 2f;
-    private float sRange = 1f;
     [SerializeField] private float _fireRate = 5.0f;
     [SerializeField] private GameObject _explosionPrefab; 
     private float _nextFire = -1f;
+    
+    //SWave Variables
+    private float _sinCenterX;
+    private float _xAmplitude = 1f;
+    private float _xFrequency = 1f;
+    private float _sinMove;
+    private Vector2 _pos;
+    private float _initialXPosition;
     
 
     private Player _player;
@@ -24,43 +29,40 @@ public class HeatSeekingEnemy : MonoBehaviour
         {
             Debug.LogError("The Player is Null!");
         }
+        
+        _sinCenterX = transform.position.x;
+        _initialXPosition = Random.Range(8.9f, -7.9f); // Store the initial X position
+        transform.position = new Vector3(_initialXPosition, 6f, 0f); // Set the initial position
     }
 
     void Update()
     {
-
-        ZigzagMovement();
+        Move();
         FireHeatSeekingMissile();
-        
+    }
+    
+    
+    private void FixedUpdate()
+    {
+        _pos = transform.position;
+        _sinMove = Mathf.Sin(_pos.y * _xFrequency) * _xAmplitude;
+        _pos.x = _sinCenterX + _sinMove + _initialXPosition; // Add the initial X position offset
+
+        transform.position = _pos;
     }
 
-    private void MoveDown()
+    private void Move()
     {
         transform.Translate(Vector3.down * _enemySpeed * Time.deltaTime);
-        if (transform.position.y < -6.4f)
-        {
-            float _randomX = Random.Range(-11, 11);
-            transform.position = new Vector3(_randomX, 6, 0);
-        }
-    }
-    
-    private void ZigzagMovement()
-    {
-        float y = transform.position.y - Time.deltaTime * _enemySpeed;
-
-        // calculate the horizontal position based on time and sSpeed
-        float x = Mathf.PingPong(Time.time * sSpeed, sRange * 2) - sRange;
-
-        transform.position = new Vector3(x, y, 0f);
 
         if (transform.position.y < -6.4f)
         {
-            float _randomX = Random.Range(-11, 11);
-            transform.position = new Vector3(_randomX, 6, 0);
+            float _randomX = Random.Range(-11f, 11f);
+            transform.position = new Vector3(_randomX, 6f, 0f);
+            _initialXPosition = _randomX; // Update the initial X position
         }
     }
 
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -94,7 +96,7 @@ public class HeatSeekingEnemy : MonoBehaviour
             {
                 _player.ScoreCalculator(10);
             }
-            //Destroy(GetComponent<Collider2D>());
+            Destroy(GetComponent<Collider2D>());
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
@@ -108,7 +110,5 @@ public class HeatSeekingEnemy : MonoBehaviour
             _nextFire = Time.time + _fireRate;
             Instantiate(_heatSeekingMissilePrefab, transform.position, Quaternion.identity);
         }
-        // Basic missile firing
-        // We'll improve this to fire heat-seeking missiles later
     }
 }

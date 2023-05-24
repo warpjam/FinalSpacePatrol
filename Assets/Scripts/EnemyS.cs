@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyS : MonoBehaviour
 {
-    [SerializeField] protected int _enemySpeed = 4;
+    [SerializeField] protected int _enemySpeed = 3;
     private Player _player;
     private Animator _enemyExplosion;
     private AudioSource _audioSource;
@@ -10,6 +10,14 @@ public class Enemy : MonoBehaviour
     private float _fireRate = 3.0f;
     private float _canFire = -1f;
     private bool _canShoot = true;
+    
+    private float _sinCenterX;
+    private float _xAmplitude;
+    private float _xFrequency;
+    private float _sinMove;
+    private Vector2 _pos;
+    private float _initialXPosition;
+    
 
     protected virtual void Start()
     {
@@ -30,12 +38,18 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("The enemy AudioSource is null!");
         }
+        
+        _sinCenterX = transform.position.x;
+        _xAmplitude = Random.Range(1f, 2f);
+        _xFrequency = Random.Range(1f, 2f);
+        _initialXPosition = Random.Range(-7.2f, 8.9f); // Store the initial X position
+        transform.position = new Vector3(_initialXPosition, 6f, 0f); // Set the initial position
 
     }
 
     protected virtual void Update()
     {
-        EnemyMovement();
+        Move();
 
         // Detect powerups in front of the enemy
         GameObject detectedPowerUp = DetectPowerUp();
@@ -51,18 +65,29 @@ public class Enemy : MonoBehaviour
             _canFire = Time.time + _fireRate;
         }
     }
+    
+    
+    private void FixedUpdate()
+    {
+        _pos = transform.position;
+        _sinMove = Mathf.Sin(_pos.y * _xFrequency) * _xAmplitude;
+        _pos.x = _sinCenterX + _sinMove + _initialXPosition; // Add the initial X position offset
+
+        transform.position = _pos;
+    }
 
 
 
 
-    private void EnemyMovement()
+    private void Move()
     {
         transform.Translate(Vector3.down * _enemySpeed * Time.deltaTime);
 
         if (transform.position.y < -6.4f)
         {
-            float _randomX = Random.Range(-11, 11);
-            transform.position = new Vector3(_randomX, 6, 0);
+            float _randomX = Random.Range(-11f, 11f);
+            transform.position = new Vector3(_randomX, 6f, 0f);
+            _initialXPosition = _randomX; // Update the initial X position
         }
     }
 
@@ -85,7 +110,8 @@ public class Enemy : MonoBehaviour
                 enemyShield.DeactivateShield();
                 
             }
-            
+
+            enemyShield.DeactivateShield();
             _enemyExplosion.SetTrigger("OnEnemyDeath");
             _audioSource.Play();
             _enemySpeed = 0;
