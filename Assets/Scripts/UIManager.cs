@@ -64,6 +64,13 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(GameOverFlickerRoutine());
     }
+
+    public void GameWonSequence()
+    {
+        _gameManager.GameWon();
+        StartCoroutine(GameWonDisplay());
+    }
+    
     
     public void UpdateMissileCount(int missileCount)
     {
@@ -119,9 +126,16 @@ public class UIManager : MonoBehaviour
         _missileCountText.color = Color.green;
     }
 
-    public void GameWonDisplay()
+    IEnumerator GameWonDisplay()
     {
-        _winText.gameObject.SetActive(true);
+        while (true)
+        {
+            _winText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.8f);
+            _winText.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.2f);
+        }
+        
     }
 
     

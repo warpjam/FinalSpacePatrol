@@ -53,7 +53,6 @@ public class HeatSeekingMissile : MonoBehaviour
         }
         else if (other.CompareTag("Laser"))
         {
-            // Destroy laser and self
             Instantiate(_explosion, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(this.gameObject);

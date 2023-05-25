@@ -21,9 +21,11 @@ public class FinalBoss : MonoBehaviour
     private Vector2 _targetPosition;
     private UIManager _uiManager;
     private SpawnManager _spawnManager;
+    private bool _canAttack;
 
     private void Start()
     {
+        _canAttack = true;
         StartCoroutine(AttackRoutine());
         _targetPosition = new Vector2(Random.Range(_xBounds.x, _xBounds.y), Random.Range(_yBounds.x, _yBounds.y));
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -48,7 +50,7 @@ public class FinalBoss : MonoBehaviour
     IEnumerator AttackRoutine()
     {
         yield return new WaitForSeconds(3f);
-        while (true)
+        while (_canAttack)
         {
             int attack = Random.Range(0, 3);
 
@@ -126,6 +128,7 @@ public class FinalBoss : MonoBehaviour
         _bossHealth -= Mathf.RoundToInt(damage);
         if (_bossHealth <= 0)
         {
+            _canAttack = false;
             StartCoroutine(DestructionSequence());
             _spawnManager.StopAllCoroutines();
             
@@ -134,7 +137,7 @@ public class FinalBoss : MonoBehaviour
 
     IEnumerator DestructionSequence()
     {
-        int numExplosions = 20;
+        int numExplosions = 15;
         float explosionDelay = 0.2f;
         Vector2 explosionArea = new Vector2(20, 5);
 
@@ -151,7 +154,7 @@ public class FinalBoss : MonoBehaviour
         } 
         
         Destroy(gameObject);
-        _uiManager.GameWonDisplay();
+        _uiManager.GameWonSequence();
     }
     
 
