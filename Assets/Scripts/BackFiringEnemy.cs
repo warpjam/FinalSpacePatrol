@@ -102,7 +102,7 @@ public class BackFiringEnemy : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if (other.CompareTag("Laser") || other.CompareTag("UniBeam") || other.CompareTag("PlayerMissile"))
+        if (other.CompareTag("Laser") || other.CompareTag("PlayerMissile"))
         {
             Destroy(other.gameObject);
 
@@ -122,6 +122,18 @@ public class BackFiringEnemy : MonoBehaviour
                 Destroy(GetComponent<Collider2D>());
                 Destroy(this.gameObject);
             }
+        }
+
+        if (other.CompareTag("UniBeam"))
+        {
+            if (_player != null)
+            {
+                _player.ScoreCalculator(10);
+            }
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            _speed = 0;
+            Destroy(GetComponent<Collider2D>());
+            Destroy(this.gameObject);
         }
     }
 

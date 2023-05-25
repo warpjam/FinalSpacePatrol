@@ -120,7 +120,7 @@ public class EnemyS : MonoBehaviour
             Destroy(this.gameObject, 2.8f);
         }
 
-        if (other.CompareTag("Laser") || other.CompareTag("UniBeam") || other.CompareTag(("PlayerMissile")))
+        if (other.CompareTag("Laser") || other.CompareTag(("PlayerMissile")))
         {
             Destroy(other.gameObject);
 
@@ -143,9 +143,23 @@ public class EnemyS : MonoBehaviour
                 Destroy(GetComponent<Collider2D>());
                 Destroy(this.gameObject, 2.0f);
             }
+
+            if (other.CompareTag("Unibeam"))
+            {
+                if (_player != null)
+                {
+                    _player.ScoreCalculator(20);
+                }
+                _enemyExplosion.SetTrigger("OnEnemyDeath");
+                _audioSource.Play();
+                _enemySpeed = 0;
+                _canShoot = false;
+                Destroy(GetComponent<Collider2D>());
+                Destroy(this.gameObject, 2.0f);
+                
+            }
         }
     }
-
 
     private void EnemyFire()
     {

@@ -94,7 +94,7 @@ public class HeatSeekingEnemy : MonoBehaviour
         {
             if (_player != null)
             {
-                _player.ScoreCalculator(10);
+                _player.ScoreCalculator(20);
             }
             Destroy(GetComponent<Collider2D>());
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
