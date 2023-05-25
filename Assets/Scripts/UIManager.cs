@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
         _ammoText.text = "Ammo: " + 15 + "/15";
         _gameOverTxt.gameObject.SetActive(false);
         _waveTxt.gameObject.SetActive(false);
+        _ammoText.color = Color.green;
         _missileCountText.text = "Missiles: " + 3;
         _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
 
@@ -71,10 +72,6 @@ public class UIManager : MonoBehaviour
         {
             _missileCountText.color = Color.grey;
         }
-        else
-        {
-            _missileCountText.color = _isMissileMode ? Color.green : Color.white;
-        }
     }
 
     public void UpdateAmmoCount(int ammoCount)
@@ -83,10 +80,6 @@ public class UIManager : MonoBehaviour
         if (ammoCount <= 0)
         {
             _ammoText.color = Color.grey;
-        }
-        else
-        {
-            _ammoText.color = _isMissileMode ? Color.white : Color.green;
         }
     }
 
@@ -114,25 +107,18 @@ public class UIManager : MonoBehaviour
         _waveTxt.gameObject.SetActive(false);;
     }
     
-    public void SetMissileMode(bool isMissileMode)
+    public void SetLaserMode()
     {
-        _isMissileMode = isMissileMode;
-        if (_isMissileMode)
-        {
-            _ammoText.color = Color.white;
-            _missileCountText.color = Color.green;
-        }
-        else
-        {
-            _ammoText.color = Color.green;
-            _missileCountText.color = Color.white;
-        }
+        _ammoText.color = Color.green;
+        _missileCountText.color = Color.white;
+    }
+
+    public void SetMissileMode()
+    {
+        _ammoText.color = Color.white;
+        _missileCountText.color = Color.green;
     }
 
     
-    public void SetAmmoCountZero()
-    {
-        _ammoText.color = Color.grey;
-    }
 
 }

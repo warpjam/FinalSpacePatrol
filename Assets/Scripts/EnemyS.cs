@@ -93,7 +93,6 @@ public class EnemyS : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DodgingEnemy dodgingEnemy = GetComponent<DodgingEnemy>();
 
         if (other.CompareTag("Player"))
         {
@@ -104,14 +103,6 @@ public class EnemyS : MonoBehaviour
                 player.Damage();
             }
             
-            EnemyShield enemyShield = GetComponent<EnemyShield>();
-            if (enemyShield != null && enemyShield.IsShieldActive())
-            {
-                enemyShield.DeactivateShield();
-                
-            }
-
-            enemyShield.DeactivateShield();
             _enemyExplosion.SetTrigger("OnEnemyDeath");
             _audioSource.Play();
             _enemySpeed = 0;
@@ -120,44 +111,35 @@ public class EnemyS : MonoBehaviour
             Destroy(this.gameObject, 2.8f);
         }
 
-        if (other.CompareTag("Laser") || other.CompareTag(("PlayerMissile")))
+        else if (other.CompareTag("Laser") || other.CompareTag(("PlayerMissile")))
         {
             Destroy(other.gameObject);
 
-            EnemyShield enemyShield = GetComponent<EnemyShield>();
-            if (enemyShield != null && enemyShield.IsShieldActive())
+            if (_player != null)
             {
-                enemyShield.DeactivateShield();
+                _player.ScoreCalculator(10);
+            }
+            _enemyExplosion.SetTrigger("OnEnemyDeath");
+            _audioSource.Play();
+            _enemySpeed = 0;
+            _canShoot = false;
+            Destroy(GetComponent<Collider2D>());
+            Destroy(this.gameObject, 2.0f);
+            
+        }
+        else if (other.CompareTag("UniBeam"))
+        {
+            if (_player != null)
+            {
+                _player.ScoreCalculator(20);
+            }
+            _enemyExplosion.SetTrigger("OnEnemyDeath");
+            _audioSource.Play();
+            _enemySpeed = 0;
+            _canShoot = false;
+            Destroy(GetComponent<Collider2D>());
+            Destroy(this.gameObject, 2.0f);
                 
-            }
-            else if (dodgingEnemy == null) // Only destroy the enemy if it's not a DodgingEnemy
-            {
-                if (_player != null)
-                {
-                    _player.ScoreCalculator(10);
-                }
-                _enemyExplosion.SetTrigger("OnEnemyDeath");
-                _audioSource.Play();
-                _enemySpeed = 0;
-                _canShoot = false;
-                Destroy(GetComponent<Collider2D>());
-                Destroy(this.gameObject, 2.0f);
-            }
-
-            if (other.CompareTag("Unibeam"))
-            {
-                if (_player != null)
-                {
-                    _player.ScoreCalculator(20);
-                }
-                _enemyExplosion.SetTrigger("OnEnemyDeath");
-                _audioSource.Play();
-                _enemySpeed = 0;
-                _canShoot = false;
-                Destroy(GetComponent<Collider2D>());
-                Destroy(this.gameObject, 2.0f);
-                
-            }
         }
     }
 

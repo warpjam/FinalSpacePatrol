@@ -5,7 +5,7 @@ using UnityEngine;
 public class RammingEnemy : Enemy
 {
     [SerializeField] private float _ramDistance = 5f;
-    [SerializeField] private float _ramSpeed = 8f;
+    [SerializeField] private float _ramSpeed = 6f;
 
     private Player _player;
 

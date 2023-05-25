@@ -47,7 +47,7 @@ public class PowerUp : MonoBehaviour
                         player.JangoMine();
                         break;
                     case 7:
-                        player.HomingMissileActive(); 
+                        player.HomingMissilePickup(); 
                         break;
                     default:
                         Debug.Log("Default Value");

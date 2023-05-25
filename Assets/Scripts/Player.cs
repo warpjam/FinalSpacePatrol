@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _tripleShotPrefab;
     private bool _canFireLaser = true;
     private SpawnManager _spawnManager;
-    [SerializeField] private bool _tripleShotActive;
     [SerializeField] private GameObject _playerThrustersPrefab;
     [SerializeField] private GameObject _damageLeft; 
     [SerializeField] private GameObject _damageRight;
@@ -26,21 +25,22 @@ public class Player : MonoBehaviour
 
     [Header("Weapons")] 
     [SerializeField] private int _ammoCount = 15;
-    [SerializeField] private AudioClip _emptyLaserSound;
-    [SerializeField] private GameObject _uniBeamPrefab;
-    [SerializeField] private bool _uniBeamActive;
-    [SerializeField] private AudioClip _uniBeamSound;
-    [SerializeField] private GameObject _homingMissilePrefab;
-    private bool _homingMissileActive = false;
     [SerializeField] private int _homingMissileCount = 3;
-    private bool _isMissileMode = false;
+    [SerializeField] private GameObject _uniBeamPrefab;
+    [SerializeField] private GameObject _homingMissilePrefab;
+    
+    [SerializeField] private bool _isMissileMode;
+    [SerializeField] private bool _isLaserMode;
+    [SerializeField] private bool _tripleShotActive;
+    [SerializeField] private bool _uniBeamActive;
     [SerializeField] private AudioClip _missileLaunch;
     [SerializeField] private AudioClip _switchWeapons;
-    
+    [SerializeField] private AudioClip _uniBeamSound;
+
     [Header("Shields-Lives-Damage")]
     [SerializeField] private int _playerLives = 3;
     private SpriteRenderer _shieldHitColor;
-    [SerializeField] bool _shieldActive = false;
+    [SerializeField] bool _shieldActive;
     [SerializeField] private int _shieldHits;
     [SerializeField] private GameObject _playerShieldPrefab;
 
@@ -53,6 +53,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        _isLaserMode = true;
+        _isMissileMode = false;
         transform.position = new Vector3(0, 0, 0);
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -73,10 +75,6 @@ public class Player : MonoBehaviour
         {
             Debug.Log("The AudioSource on the Player is Null");
         }
-        else
-        {
-            _audioSource.clip = _basicLaserSound;
-        }
 
     }
 
@@ -85,19 +83,19 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
 
-        if (Input.GetKeyDown(KeyCode.Space) && _canFireLaser)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (_isMissileMode && _homingMissileCount > 0)
+            if (_isLaserMode == true && _canFireLaser)
+            {
+                FireLaser();
+            }
+            else if (_isMissileMode == true)
             {
                 FireMissiles();
             }
-            else if (_tripleShotActive)
+            else if (_tripleShotActive == true)
             {
                 FireTrippleShot();
-            }
-            else
-            {
-                FireLaser();
             }
         }
 
@@ -111,13 +109,13 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             AudioSource.PlayClipAtPoint(_switchWeapons, transform.position);
-            SwitchToMissileMode();
+            SwitchWeapons();
         }
     }
 
     void FireLaser()
         {
-            if (_ammoCount > 0 || (_isMissileMode && _homingMissileCount == 0))
+            if (_ammoCount > 0)
             {
                 Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
                 _ammoCount--;
@@ -126,89 +124,70 @@ public class Player : MonoBehaviour
                 StartCoroutine(ReloadLaserTimer());
                 _audioSource.PlayOneShot(_basicLaserSound);
             }
-            else if (_isMissileMode)
-            {
-                _isMissileMode = false;
-                _uiManager.SetMissileMode(false);
-            }
-        }
-
-    void FireTrippleShot()
-        {
-            if (_ammoCount > 0 || (_isMissileMode && _homingMissileCount == 0))
-            {
-                Instantiate(_tripleShotPrefab, transform.position + new Vector3(0, 0f, 0), Quaternion.identity);
-                _ammoCount--;
-                _uiManager.UpdateAmmoCount(_ammoCount);
-                _canFireLaser = false;
-                StartCoroutine(ReloadLaserTimer());
-                _audioSource.PlayOneShot(_basicLaserSound);
-            }
-            else if (_isMissileMode)
-            {
-                _isMissileMode = false;
-                _uiManager.SetMissileMode(false);
-            }
-        }
-
-        private void FireMissiles()
-        {
-            Instantiate(_homingMissilePrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
-            _homingMissileCount--;
-            _uiManager.UpdateMissileCount(_homingMissileCount);
-            _canFireLaser = false;
-            StartCoroutine(ReloadLaserTimer());
-            _audioSource.PlayOneShot(_missileLaunch);
-        }
-
-
-
-        private void PlayerMovement()
-        {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
-            Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
-
-            float playerSpeed = _playerSpeed;
-            float thrustersScale = 0.5f;
             
-            if (Input.GetKey(KeyCode.RightShift) && _speedBoostActive != true && _canThrust == true && _thrustPower > 0)
-            {
-                _thrustPower -= 0.50f;
-                _uiManager.UpdateThrustSlider(_thrustPower); 
-                playerSpeed *= 2f;
-                thrustersScale += 0.25f;
-            }
-                
-            if (_thrustPower == 0 && _isRechargingThrusters == false)
-            {
-                _canThrust = false;
-                _isRechargingThrusters = true;
-                StartCoroutine(RechargeThrusters());
-            }
-            transform.Translate(direction * playerSpeed * Time.deltaTime);
-
-            transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5.0f,5.0f), 0);
-
-            if (horizontalInput != 0 || verticalInput != 0)
-            {
-                _playerThrustersPrefab.SetActive(true);
-                _playerThrustersPrefab.transform.localScale = new Vector3(thrustersScale, thrustersScale,thrustersScale);
-            }
-            else if (_speedBoostActive != true)
-            {
-                _playerThrustersPrefab.SetActive(false);
-            }
-
-            if (transform.position.x > 11f)
-            {
-                transform.position = new Vector3(-11, transform.position.y, 0);
-            }
-            else if (transform.position.x < -11f)
-            {
-                transform.position = new Vector3(11, transform.position.y, 0);
-            }
         }
+    void FireMissiles()
+    {
+        Instantiate(_homingMissilePrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
+        _homingMissileCount--;
+        _uiManager.UpdateMissileCount(_homingMissileCount);
+        _audioSource.PlayOneShot(_missileLaunch);
+    }
+    
+    void FireTrippleShot()
+    {
+        Instantiate(_tripleShotPrefab, transform.position + new Vector3(0, 0f, 0), Quaternion.identity);
+        _canFireLaser = false;
+        StartCoroutine(ReloadLaserTimer());
+        _audioSource.PlayOneShot(_basicLaserSound);
+    }
+    
+    private void PlayerMovement()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
+
+        float playerSpeed = _playerSpeed;
+        float thrustersScale = 0.5f;
+        
+        if (Input.GetKey(KeyCode.RightShift) && _speedBoostActive != true && _canThrust == true && _thrustPower > 0)
+        {
+            _thrustPower -= 0.50f;
+            _uiManager.UpdateThrustSlider(_thrustPower); 
+            playerSpeed *= 2f;
+            thrustersScale += 0.25f;
+        }
+            
+        if (_thrustPower == 0 && _isRechargingThrusters == false)
+        {
+            _canThrust = false;
+            _isRechargingThrusters = true;
+            StartCoroutine(RechargeThrusters());
+        }
+        transform.Translate(direction * playerSpeed * Time.deltaTime);
+
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5.0f,5.0f), 0);
+
+        if (horizontalInput != 0 || verticalInput != 0)
+        {
+            _playerThrustersPrefab.SetActive(true);
+            _playerThrustersPrefab.transform.localScale = new Vector3(thrustersScale, thrustersScale,thrustersScale);
+        }
+        else if (_speedBoostActive != true)
+        {
+            _playerThrustersPrefab.SetActive(false);
+        }
+
+        if (transform.position.x > 11f)
+        {
+            transform.position = new Vector3(-11, transform.position.y, 0);
+        }
+        else if (transform.position.x < -11f)
+        {
+            transform.position = new Vector3(11, transform.position.y, 0);
+        }
+    }
 
     IEnumerator RechargeThrusters()
     {
@@ -277,6 +256,8 @@ public class Player : MonoBehaviour
     public void TripleShotActive()
     {
         _tripleShotActive = true;
+        _isLaserMode = false;
+        _isMissileMode = false;
         StartCoroutine(TripleShotPowerDownRoutine());
     }
 
@@ -285,7 +266,8 @@ public class Player : MonoBehaviour
         while (_tripleShotActive == true)
         {
            yield return new WaitForSeconds(5.0f);
-            _tripleShotActive = false; 
+            _tripleShotActive = false;
+            _isLaserMode = true;
         }
         
     }
@@ -399,27 +381,25 @@ public class Player : MonoBehaviour
         _canAttractPowerUps = true;
     }
 
-    public void HomingMissileActive()
+    public void HomingMissilePickup()
     {
         _homingMissileCount += 3;
         _uiManager.UpdateMissileCount(_homingMissileCount);
     }
 
-    private void SwitchToMissileMode()
+    private void SwitchWeapons()
     {
-        if (_homingMissileCount > 0)
+        if (_isLaserMode == true)
         {
-            _isMissileMode = !_isMissileMode;
-            _uiManager.SetMissileMode(_isMissileMode);
+            _isLaserMode = false;
+            _isMissileMode = true;
+            _uiManager.SetMissileMode();
         }
-        else
+        else if (_isMissileMode == true)
         {
             _isMissileMode = false;
-        }
-
-        if (_ammoCount <= 0)
-        {
-            _uiManager.SetAmmoCountZero();
+            _isLaserMode = true;
+            _uiManager.SetLaserMode();
         }
     }
 
