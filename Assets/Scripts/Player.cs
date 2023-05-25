@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip _missileLaunch;
     [SerializeField] private AudioClip _switchWeapons;
     [SerializeField] private AudioClip _uniBeamSound;
+    [SerializeField] private AudioClip _emptyAmmoSound;
 
     [Header("Shields-Lives-Damage")]
     [SerializeField] private int _playerLives = 3;
@@ -85,15 +86,15 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (_isLaserMode == true && _canFireLaser)
+            if (_isLaserMode)
             {
                 FireLaser();
             }
-            else if (_isMissileMode == true)
+            else if (_isMissileMode)
             {
                 FireMissiles();
             }
-            else if (_tripleShotActive == true)
+            else if (_tripleShotActive)
             {
                 FireTrippleShot();
             }
@@ -115,7 +116,7 @@ public class Player : MonoBehaviour
 
     void FireLaser()
         {
-            if (_ammoCount > 0)
+            if (_ammoCount > 0 && _canFireLaser)
             {
                 Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
                 _ammoCount--;
@@ -124,21 +125,31 @@ public class Player : MonoBehaviour
                 StartCoroutine(ReloadLaserTimer());
                 _audioSource.PlayOneShot(_basicLaserSound);
             }
+            else if (_ammoCount == 0)
+            {
+                _audioSource.PlayOneShot(_emptyAmmoSound);
+            }
             
         }
     void FireMissiles()
     {
-        Instantiate(_homingMissilePrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
-        _homingMissileCount--;
-        _uiManager.UpdateMissileCount(_homingMissileCount);
-        _audioSource.PlayOneShot(_missileLaunch);
+        if (_homingMissileCount > 0)
+        {
+            Instantiate(_homingMissilePrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
+            _homingMissileCount--;
+            _uiManager.UpdateMissileCount(_homingMissileCount);
+            _audioSource.PlayOneShot(_missileLaunch);
+        }
+        else
+        {
+            _audioSource.PlayOneShot(_emptyAmmoSound);
+        }
+        
     }
     
     void FireTrippleShot()
     {
         Instantiate(_tripleShotPrefab, transform.position + new Vector3(0, 0f, 0), Quaternion.identity);
-        _canFireLaser = false;
-        StartCoroutine(ReloadLaserTimer());
         _audioSource.PlayOneShot(_basicLaserSound);
     }
     

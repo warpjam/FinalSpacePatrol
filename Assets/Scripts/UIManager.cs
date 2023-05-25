@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider _thrustSlider;
     [SerializeField] private TMP_Text _waveTxt;
     [SerializeField] private TMP_Text _missileCountText;
-    private bool _isMissileMode = false;
+    [SerializeField] private TMP_Text _winText;
     private GameManager _gameManager;
     void Start()
     {
@@ -117,6 +117,11 @@ public class UIManager : MonoBehaviour
     {
         _ammoText.color = Color.white;
         _missileCountText.color = Color.green;
+    }
+
+    public void GameWonDisplay()
+    {
+        _winText.gameObject.SetActive(true);
     }
 
     

@@ -19,12 +19,15 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] private int _numMines = 1;
     [SerializeField] private float _missileFireRate = 1f;
     private Vector2 _targetPosition;
+    private UIManager _uiManager;
+    private SpawnManager _spawnManager;
 
     private void Start()
     {
         StartCoroutine(AttackRoutine());
         _targetPosition = new Vector2(Random.Range(_xBounds.x, _xBounds.y), Random.Range(_yBounds.x, _yBounds.y));
-        
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
     }
 
     private void Update()
@@ -124,6 +127,8 @@ public class FinalBoss : MonoBehaviour
         if (_bossHealth <= 0)
         {
             StartCoroutine(DestructionSequence());
+            _spawnManager.StopAllCoroutines();
+            
         }
     }
 
@@ -146,6 +151,7 @@ public class FinalBoss : MonoBehaviour
         } 
         
         Destroy(gameObject);
+        _uiManager.GameWonDisplay();
     }
     
 
