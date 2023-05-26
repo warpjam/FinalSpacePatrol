@@ -373,23 +373,29 @@ public class Player : MonoBehaviour
     
     private void AttractPowerUps()
     {
-        GameObject[] powerUps = GameObject.FindGameObjectsWithTag("PowerUps");
-        foreach (GameObject powerUp in powerUps)
+        if (_canAttractPowerUps == true)
         {
-            Rigidbody2D powerUpRigidbody = powerUp.GetComponent<Rigidbody2D>();
-            if (powerUpRigidbody != null)
+            GameObject[] powerUps = GameObject.FindGameObjectsWithTag("PowerUps");
+            foreach (GameObject powerUp in powerUps)
             {
-                Vector2 direction = (transform.position - powerUp.transform.position).normalized;
-                powerUpRigidbody.velocity = direction * _playerSpeed * 2;
+                Rigidbody2D powerUpRigidbody = powerUp.GetComponent<Rigidbody2D>();
+                if (powerUpRigidbody != null)
+                {
+                    Vector2 direction = (transform.position - powerUp.transform.position).normalized;
+                    powerUpRigidbody.velocity = direction * _playerSpeed * 2;
+                }
             }
+            
         }
     }
     
     IEnumerator AttractPowerUpsCooldown()
     {
         _canAttractPowerUps = false;
+        _uiManager.SetMagStatusOff();
         yield return new WaitForSeconds(8.0f);
         _canAttractPowerUps = true;
+        _uiManager.SetMagStatusOn();
     }
 
     public void HomingMissilePickup()

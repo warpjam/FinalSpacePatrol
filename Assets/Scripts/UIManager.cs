@@ -15,7 +15,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _waveTxt;
     [SerializeField] private TMP_Text _missileCountText;
     [SerializeField] private TMP_Text _winText;
+    [SerializeField] private Image _magStatus;
+    [SerializeField] private GameObject _controls;
     private GameManager _gameManager;
+    
     void Start()
     {
         //_scoreText.text = "Score: " + 0;
@@ -25,7 +28,7 @@ public class UIManager : MonoBehaviour
         _ammoText.color = Color.green;
         _missileCountText.text = "Missiles: " + 3;
         _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
-
+        _magStatus.color = Color.white;
         if (_gameManager == null)
         {
             Debug.Log("Game Manager is NULL");
@@ -138,6 +141,19 @@ public class UIManager : MonoBehaviour
         
     }
 
-    
+    public void SetMagStatusOn()
+    {
+        _magStatus.color = Color.white;
+    }
 
+    public void SetMagStatusOff()
+    {
+        _magStatus.color = Color.black;
+    }
+
+    public void ControlsOff()
+    {
+        _controls.SetActive(false);
+    }
+    
 }
