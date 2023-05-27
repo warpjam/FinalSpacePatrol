@@ -17,7 +17,6 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] private GameObject _explosionPrefab;
     [SerializeField] private GameObject _hitExplosionPrefab;
     [SerializeField] private int _numMines = 1;
-    [SerializeField] private float _missileFireRate = 1f;
     private Vector2 _targetPosition;
     private UIManager _uiManager;
     private SpawnManager _spawnManager;
