@@ -7,5 +7,4 @@ public class Manual : MonoBehaviour
     {
         SceneManager.LoadScene(0); //Main Menu
     }
-    
 }

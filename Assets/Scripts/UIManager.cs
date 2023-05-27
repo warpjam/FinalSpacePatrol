@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     
     void Start()
     {
-        //_scoreText.text = "Score: " + 0;
+        _scoreText.text = "Score: " + 0;
         _ammoText.text = "Ammo: " + 15 + "/15";
         _gameOverTxt.gameObject.SetActive(false);
         _waveTxt.gameObject.SetActive(false);

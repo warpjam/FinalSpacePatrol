@@ -6,8 +6,7 @@ public class RammingEnemy : MonoBehaviour
     [SerializeField] private float _ramDistance = 5f;
     [SerializeField] private float _ramSpeed = 6f;
     [SerializeField] private int _enemySpeed = 3;
-    [SerializeField] private GameObject _explosionPrefab; 
-    private float _nextFire = -1f;
+    [SerializeField] private GameObject _explosionPrefab;
 
     private Player _player;
 
