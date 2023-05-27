@@ -42,7 +42,7 @@ public class EnemyS : MonoBehaviour
         _sinCenterX = transform.position.x;
         _xAmplitude = Random.Range(1f, 2f);
         _xFrequency = Random.Range(1f, 2f);
-        _initialXPosition = Random.Range(-7.2f, 8.9f); // Store the initial X position
+        _initialXPosition = Random.Range(8f, -8f); // Store the initial X position
         transform.position = new Vector3(_initialXPosition, 6f, 0f); // Set the initial position
 
     }

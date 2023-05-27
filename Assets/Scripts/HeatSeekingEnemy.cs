@@ -31,7 +31,7 @@ public class HeatSeekingEnemy : MonoBehaviour
         }
         
         _sinCenterX = transform.position.x;
-        _initialXPosition = Random.Range(8.9f, -7.9f); // Store the initial X position
+        _initialXPosition = Random.Range(8f, -8f); // Store the initial X position
         transform.position = new Vector3(_initialXPosition, 6f, 0f); // Set the initial position
     }
 
@@ -57,7 +57,7 @@ public class HeatSeekingEnemy : MonoBehaviour
 
         if (transform.position.y < -6.4f)
         {
-            float _randomX = Random.Range(-11f, 11f);
+            float _randomX = Random.Range(8f, -8f);
             transform.position = new Vector3(_randomX, 6f, 0f);
             _initialXPosition = _randomX; // Update the initial X position
         }
